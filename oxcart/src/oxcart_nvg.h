@@ -44,6 +44,8 @@ extern "C" {
 #define OXCART_NVG_LINEJOIN_MITER 0x00
 #define OXCART_NVG_LINEJOIN_ROUND 0x01
 #define OXCART_NVG_LINEJOIN_BEVEL 0x02
+#define OXCART_NVG_WINDING_CCW    0x00
+#define OXCART_NVG_WINDING_CW     0x01
 
 typedef struct oxcart_nvg_t oxcart_nvg_t;
 
@@ -51,10 +53,10 @@ void oxcart_nvg_initialize();
 void oxcart_nvg_terminate();
 oxcart_nvg_t* oxcart_nvg_create();
 void oxcart_nvg_destroy(oxcart_nvg_t* nvg);
-void oxcart_nvg_save(oxcart_nvg_t* nvg);
-void oxcart_nvg_restore(oxcart_nvg_t* nvg);
 void oxcart_nvg_beginframe(oxcart_nvg_t* nvg);
 void oxcart_nvg_endframe(oxcart_nvg_t* nvg);
+void oxcart_nvg_save(oxcart_nvg_t* nvg);
+void oxcart_nvg_restore(oxcart_nvg_t* nvg);
 void oxcart_nvg_setlinecap(oxcart_nvg_t* nvg, int linecap);
 void oxcart_nvg_setlinejoin(oxcart_nvg_t* nvg, int linejoin);
 void oxcart_nvg_setmiterlimit(oxcart_nvg_t* nvg, float limit);
@@ -67,6 +69,7 @@ int oxcart_nvg_inclip(oxcart_nvg_t* nvg, float x, float y);
 void oxcart_nvg_resetclip(oxcart_nvg_t* nvg);
 void oxcart_nvg_beginpath(oxcart_nvg_t* nvg);
 void oxcart_nvg_closepath(oxcart_nvg_t* nvg);
+void oxcart_nvg_setpathwinding(oxcart_nvg_t* nvg, int winding);
 void oxcart_nvg_moveto(oxcart_nvg_t* nvg, float x, float y);
 void oxcart_nvg_lineto(oxcart_nvg_t* nvg, float x, float y);
 void oxcart_nvg_bezierto(oxcart_nvg_t* nvg, float cx1, float cy1, float cx2, float cy2, float x, float y);

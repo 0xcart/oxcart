@@ -123,6 +123,7 @@ struct oxcart_nvgmodule_t
 
 static void _nvg_appendcommand(oxcart_nvg_t* nvg, float* values, int count);
 static void _nvg_reset(oxcart_nvg_t* nvg);
+static void _nvg_transformpoint(oxcart_nvg_t* nvg, float x, float y, float* tx, float* ty);
 static void _nvg_loadshader();
 
 static oxcart_nvgmodule_t _m = {0};
@@ -184,31 +185,6 @@ void oxcart_nvg_destroy(oxcart_nvg_t* nvg)
 /**
  * 
  */
-void oxcart_nvg_save(oxcart_nvg_t* nvg)
-{
-  oxcart_nvgstate_t* state;
-
-  OXCART_ASSERT(nvg);
-
-  state = oxcart_vector_back(nvg->states);
-  oxcart_vector_pushback(nvg->states, state);
-}
-
-/**
- * 
- */
-void oxcart_nvg_restore(oxcart_nvg_t* nvg)
-{
-  OXCART_ASSERT(nvg);
-
-  if (oxcart_vector_size(nvg->states) > 1) {
-    oxcart_vector_popback(nvg->states);
-  }
-}
-
-/**
- * 
- */
 void oxcart_nvg_beginframe(oxcart_nvg_t* nvg)
 {
   OXCART_ASSERT(nvg);
@@ -227,6 +203,31 @@ void oxcart_nvg_endframe(oxcart_nvg_t* nvg)
 /**
  * 
  */
+void oxcart_nvg_save(oxcart_nvg_t* nvg)
+{
+  oxcart_nvgstate_t* state;
+
+  OXCART_ASSERT(nvg);
+
+  state = (oxcart_nvgstate_t*)oxcart_vector_back(nvg->states);
+  oxcart_vector_pushback(nvg->states, state);
+}
+
+/**
+ * 
+ */
+void oxcart_nvg_restore(oxcart_nvg_t* nvg)
+{
+  OXCART_ASSERT(nvg);
+
+  if (oxcart_vector_size(nvg->states) > 1) {
+    oxcart_vector_popback(nvg->states);
+  }
+}
+
+/**
+ * 
+ */
 void oxcart_nvg_setlinecap(oxcart_nvg_t* nvg, int linecap)
 {
   oxcart_nvgstate_t* state;
@@ -234,7 +235,7 @@ void oxcart_nvg_setlinecap(oxcart_nvg_t* nvg, int linecap)
   OXCART_ASSERT(nvg);
   OXCART_ASSERT((linecap == OXCART_NVG_LINECAP_BUTT) || (linecap == OXCART_NVG_LINECAP_ROUND) || (linecap == OXCART_NVG_LINECAP_SQUARE));
 
-  state = oxcart_vector_back(nvg->states);
+  state = (oxcart_nvgstate_t*)oxcart_vector_back(nvg->states);
   state->linecap = linecap;
 }
 
@@ -248,7 +249,7 @@ void oxcart_nvg_setlinejoin(oxcart_nvg_t* nvg, int linejoin)
   OXCART_ASSERT(nvg);
   OXCART_ASSERT((linejoin == OXCART_NVG_LINEJOIN_MITER) || (linejoin == OXCART_NVG_LINEJOIN_ROUND) || (linejoin == OXCART_NVG_LINEJOIN_BEVEL));
 
-  state = oxcart_vector_back(nvg->states);
+  state = (oxcart_nvgstate_t*)oxcart_vector_back(nvg->states);
   state->linejoin = linejoin;
 }
 
@@ -262,7 +263,7 @@ void oxcart_nvg_setmiterlimit(oxcart_nvg_t* nvg, float limit)
   OXCART_ASSERT(nvg);
   OXCART_ASSERT(limit > 0.0f);
 
-  state = oxcart_vector_back(nvg->states);
+  state = (oxcart_nvgstate_t*)oxcart_vector_back(nvg->states);
   state->miterlimit = limit;
 }
 
@@ -277,7 +278,7 @@ void oxcart_nvg_setglobalalpha(oxcart_nvg_t* nvg, float alpha)
 
   alpha = oxcart_clampf(alpha, 0.0f, 1.0f);
 
-  state = oxcart_vector_back(nvg->states);
+  state = (oxcart_nvgstate_t*)oxcart_vector_back(nvg->states);
   state->globalalpha = alpha;
 }
 
@@ -291,7 +292,7 @@ void oxcart_nvg_setstrokewidth(oxcart_nvg_t* nvg, float width)
   OXCART_ASSERT(nvg);
   OXCART_ASSERT(width > 0.0f);
 
-  state = oxcart_vector_back(nvg->states);
+  state = (oxcart_nvgstate_t*)oxcart_vector_back(nvg->states);
   state->strokewidth = width;
 }
 
@@ -305,7 +306,7 @@ void oxcart_nvg_setstrokecolor(oxcart_nvg_t* nvg, const oxcart_vec4f_t* color)
   OXCART_ASSERT(nvg);
   OXCART_ASSERT(color);
 
-  state = oxcart_vector_back(nvg->states);
+  state = (oxcart_nvgstate_t*)oxcart_vector_back(nvg->states);
   state->strokecolor = *color;
 }
 
@@ -319,7 +320,7 @@ void oxcart_nvg_setfillcolor(oxcart_nvg_t* nvg, const oxcart_vec4f_t* color)
   OXCART_ASSERT(nvg);
   OXCART_ASSERT(color);
 
-  state = oxcart_vector_back(nvg->states);
+  state = (oxcart_nvgstate_t*)oxcart_vector_back(nvg->states);
   state->fillcolor = *color;
 }
 
@@ -340,7 +341,81 @@ void oxcart_nvg_beginpath(oxcart_nvg_t* nvg)
  */
 void oxcart_nvg_closepath(oxcart_nvg_t* nvg)
 {
+  float command[1];
+
   OXCART_ASSERT(nvg);
+
+  command[0] = OXCART_NVG_COMMAND_CLOSE;
+
+  _nvg_appendcommand(nvg, command, OXCART_ARRAY_SIZE(command));
+}
+
+/**
+ * 
+ */
+void oxcart_nvg_setpathwinding(oxcart_nvg_t* nvg, int winding)
+{
+  float command[2];
+
+  OXCART_ASSERT(nvg);
+  OXCART_ASSERT((winding == OXCART_NVG_WINDING_CCW) || (winding == OXCART_NVG_WINDING_CW));
+
+  command[0] = OXCART_NVG_COMMAND_WINDING;
+  command[1] = (float)winding;
+
+  _nvg_appendcommand(nvg, command, OXCART_ARRAY_SIZE(command));
+}
+
+/**
+ * 
+ */
+void oxcart_nvg_moveto(oxcart_nvg_t* nvg, float x, float y)
+{
+  float command[3];
+
+  OXCART_ASSERT(nvg);
+
+  command[0] = OXCART_NVG_COMMAND_MOVETO;
+  command[1] = x;
+  command[2] = y;
+
+  _nvg_appendcommand(nvg, command, OXCART_ARRAY_SIZE(command));
+}
+
+/**
+ * 
+ */
+void oxcart_nvg_lineto(oxcart_nvg_t* nvg, float x, float y)
+{
+  float command[3];
+
+  OXCART_ASSERT(nvg);
+
+  command[0] = OXCART_NVG_COMMAND_LINETO;
+  command[1] = x;
+  command[2] = y;
+
+  _nvg_appendcommand(nvg, command, OXCART_ARRAY_SIZE(command));
+}
+
+/**
+ * 
+ */
+void oxcart_nvg_bezierto(oxcart_nvg_t* nvg, float cx1, float cy1, float cx2, float cy2, float x, float y)
+{
+  float command[7];
+
+  OXCART_ASSERT(nvg);
+
+  command[0] = OXCART_NVG_COMMAND_BEZIERTO;
+  command[1] = cx1;
+  command[2] = cy1;
+  command[3] = cx2;
+  command[4] = cy2;
+  command[5] = x;
+  command[6] = y;
+
+  _nvg_appendcommand(nvg, command, OXCART_ARRAY_SIZE(command));
 }
 
 /**
@@ -358,15 +433,33 @@ static void _nvg_appendcommand(oxcart_nvg_t* nvg, float* values, int count)
     switch ((int)values[i])
     {
       case OXCART_NVG_COMMAND_MOVETO:
-        break;
       case OXCART_NVG_COMMAND_LINETO:
+        OXCART_ASSERT((count - i) >= 3);
+        _nvg_transformpoint(nvg, values[i + 1], values[i + 2], &values[i + 1], &values[i + 2]);
+        i += 3;
         break;
       case OXCART_NVG_COMMAND_BEZIERTO:
+        OXCART_ASSERT((count - i) >= 7);
+        _nvg_transformpoint(nvg, values[i + 1], values[i + 2], &values[i + 1], &values[i + 2]);
+        _nvg_transformpoint(nvg, values[i + 3], values[i + 4], &values[i + 3], &values[i + 4]);
+        _nvg_transformpoint(nvg, values[i + 5], values[i + 6], &values[i + 5], &values[i + 6]);
+        i += 7;
+        break;
+      case OXCART_NVG_COMMAND_CLOSE:
+        OXCART_ASSERT((count - i) >= 1);
+        i += 1;
+        break;
+      case OXCART_NVG_COMMAND_WINDING:
+        OXCART_ASSERT((count - i) >= 2);
+        i += 2;
         break;
       default:
+        OXCART_ASSERT(!"Invalid nvg command");
         break;
     }
   }
+
+  oxcart_vector_pushbackv(nvg->commands, values, count);
 }
 
 /**
@@ -391,6 +484,26 @@ static void _nvg_reset(oxcart_nvg_t* nvg)
 
   oxcart_vector_clear(nvg->states);
   oxcart_vector_pushback(nvg->states, &state);
+}
+
+/**
+ * 
+ */
+static void _nvg_transformpoint(oxcart_nvg_t* nvg, float x, float y, float* tx, float* ty)
+{
+  oxcart_vec3f_t vec3;
+  oxcart_nvgstate_t* state;
+
+  OXCART_ASSERT(nvg);
+  OXCART_ASSERT(tx);
+  OXCART_ASSERT(ty);
+
+  state = (oxcart_nvgstate_t*)oxcart_vector_back(nvg->states);
+
+  vec3 = oxcart_vec3f_set(x, y, 1.0f);
+  vec3 = oxcart_vec3f_transform(&vec3, &state->transform);
+  *tx = OXCART_VEC_X(vec3);
+  *ty = OXCART_VEC_Y(vec3);
 }
 
 /**
