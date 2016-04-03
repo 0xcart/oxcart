@@ -213,9 +213,6 @@
     <None Include="..\src\oxcart_math.inl" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\chipmunk\bld\chipmunk.vcxproj">
-      <Project>{aa3b6981-9868-4c60-bea9-4487f240deee}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\..\freetype\bld\freetype.vcxproj">
       <Project>{78b079bd-9fc7-4b9e-b4a6-96da0f00248b}</Project>
     </ProjectReference>

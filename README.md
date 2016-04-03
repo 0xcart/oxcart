@@ -3,9 +3,8 @@
 *A foundation for creating games on the Windows platform*
 
   * Written in C
-  * OpenGL 4.5 core API support
-  * Chipmunk2D rigid body physics
   * Lua 5.1 integration
+  * OpenGL 4.5 core API support
   * PhysicsFS integration to provide abstract access to archives
 
 #### Acknowledgements
@@ -15,7 +14,6 @@
 
 #### Internal Dependencies
 
-  * Chipmunk2D 7.0.0 (http://chipmunk-physics.net/)
   * Freetype 2.5.3 (http://www.freetype.org/)
   * LodePNG 20141130 (https://github.com/lvandeve/lodepng/)
   * Lua 5.1.5 (http://www.lua.org/)
