@@ -1,7 +1,7 @@
 /**
  * oxcart is licensed under the terms of the MIT license reproduced below.
  * 
- * Copyright © 2014 Thomas J. Schaefer
+ * Copyright © 2016 Thomas J. Schaefer
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy of 
  * this software and associated documentation files (the "Software"), to deal in 
@@ -81,7 +81,7 @@ OXCART_INLINE oxcart_markup_t oxcart_markup_defaults()
   markup.size = 16;
   markup.style = OXCART_TEXT_STYLE_REGULAR;
   markup.line = 0.0f;
-  markup.color = oxcart_vec4f_rgba(0, 0, 0, 255);
+  markup.color = oxcart_vec4f_rgba(255, 255, 255, 255);
 
   return(markup);
 }
