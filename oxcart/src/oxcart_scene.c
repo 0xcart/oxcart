@@ -105,7 +105,7 @@ void oxcart_scene_setviewport(int w, int h)
   mat4 = oxcart_mat4f_orthographic((float)w, (float)h);
   oxcart_camera_setprojection(OXCART_CAMERA_ORTHO, &mat4);
 
-  mat4 = oxcart_mat4f_perspective(45.0f, (float)w / (float)h, 0.1f, 1000.0f);
+  mat4 = oxcart_mat4f_perspective(OXCART_DEG2RADf(45.0f), (float)w / (float)h, 0.1f, 1000.0f);
   oxcart_camera_setprojection(OXCART_CAMERA_PERSP, &mat4);
 }
 
@@ -140,7 +140,7 @@ void oxcart_scene_draw(float coeff)
 
   angle = (g_state.next_ang - g_state.prev_ang) * coeff;
   angle += g_state.prev_ang;
-  rotate = oxcart_mat4f_rotate(0.5f, 1.0f, 0.0f, angle);
+  rotate = oxcart_mat4f_rotate(0.5f, 1.0f, 0.0f, OXCART_DEG2RADf(angle));
   translate = oxcart_mat4f_translate(0.0f, 0.0f, -20.0f);
   model = oxcart_mat4f_multiply(&translate, &rotate);
   oxcart_cube_draw(_m.cube, &model);

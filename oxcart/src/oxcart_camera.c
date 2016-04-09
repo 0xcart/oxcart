@@ -41,7 +41,6 @@ struct oxcart_camerauniform_t
 
 struct oxcart_camera_t
 {
-  /* TODO: position and quaternion */
   oxcart_camerauniform_t uniform;
   GLuint ubo;
 };
@@ -75,7 +74,7 @@ void oxcart_camera_initialize()
   target = oxcart_vec3f_set(0.0f, 0.0f, -1.0f);
   up = oxcart_vec3f_set(0.0f, 1.0f, 0.0f);
   _m.camera[OXCART_CAMERA_PERSP].uniform.view = oxcart_mat4f_lookat(&eye, &target, &up);
-  _m.camera[OXCART_CAMERA_PERSP].uniform.projection = oxcart_mat4f_perspective(45.0f, 800.0f / 600.0f, 0.1f, 1000.0f);
+  _m.camera[OXCART_CAMERA_PERSP].uniform.projection = oxcart_mat4f_perspective(OXCART_DEG2RADf(45.0f), 800.0f / 600.0f, 0.1f, 1000.0f);
   glGenBuffers(1, &_m.camera[OXCART_CAMERA_PERSP].ubo);
   glBindBuffer(GL_UNIFORM_BUFFER, _m.camera[OXCART_CAMERA_PERSP].ubo);
   glBufferData(GL_UNIFORM_BUFFER, sizeof(oxcart_camerauniform_t), &_m.camera[OXCART_CAMERA_PERSP].uniform, GL_DYNAMIC_DRAW);
