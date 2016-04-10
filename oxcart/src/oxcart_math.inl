@@ -1191,7 +1191,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_mat3f_determinant(const oxcart_mat3f_t* 
 OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_inverse(const oxcart_mat3f_t* m1, float* d)
 {
   int i;
-  float odd;
+  float rd;
   oxcart_mat3f_t mat3;
 
   OXCART_ASSERT(m1);
@@ -1211,10 +1211,10 @@ OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_inverse(const oxcart_mat3
     return(mat3);
   }
 
-  odd = 1.0f / *d;
+  rd = 1.0f / *d;
 
   for (i = 0; i < 9; i++) {
-    mat3.d[i] *= odd;
+    mat3.d[i] *= rd;
   }
 
   return(mat3);
@@ -1511,7 +1511,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_mat4f_determinant(const oxcart_mat4f_t* 
 OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_inverse(const oxcart_mat4f_t* m1, float* d)
 {
   int i;
-  float odd;
+  float rd;
   oxcart_mat4f_t mat4;
 
   OXCART_ASSERT(m1);
@@ -1538,10 +1538,10 @@ OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_inverse(const oxcart_mat4
     return(mat4);
   }
 
-  odd = 1.0f / *d;
+  rd = 1.0f / *d;
 
   for (i = 0; i < 16; i++) {
-    mat4.d[i] *= odd;
+    mat4.d[i] *= rd;
   }
 
   return(mat4);
@@ -1711,6 +1711,23 @@ OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_multiply(const oxcart_qua
 /**
  * 
  */
+OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_multiplyscalar(const oxcart_quatf_t* q1, float s)
+{
+  oxcart_quatf_t quat;
+
+  OXCART_ASSERT(q1);
+
+  quat.d[0] = q1->d[0] * s;
+  quat.d[1] = q1->d[1] * s;
+  quat.d[2] = q1->d[2] * s;
+  quat.d[3] = q1->d[3] * s;
+
+  return(quat);
+}
+
+/**
+ * 
+ */
 OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_conjugate(const oxcart_quatf_t* q1)
 {
   oxcart_quatf_t quat;
@@ -1730,21 +1747,19 @@ OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_conjugate(const oxcart_qu
  */
 OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_inverse(const oxcart_quatf_t* q1)
 {
-  float lengthsq;
+  float rls;
   oxcart_quatf_t quat;
 
   OXCART_ASSERT(q1);
 
-  lengthsq = oxcart_vec4f_lengthsq(q1);
+  rls = oxcart_vec4f_lengthsq(q1);
 
-  if (lengthsq > 0.0f) {
-    lengthsq = 1.0f / lengthsq;
+  if (rls > 0.0f) {
+    rls = 1.0f / rls;
   }
 
-  quat.d[0] = -q1->d[0] * lengthsq;
-  quat.d[1] = -q1->d[1] * lengthsq;
-  quat.d[2] = -q1->d[2] * lengthsq;
-  quat.d[3] = q1->d[3] * lengthsq;
+  quat = oxcart_quatf_conjugate(q1);
+  quat = oxcart_quatf_multiplyscalar(&quat, rls);
 
   return(quat);
 }
@@ -1792,7 +1807,7 @@ OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_eulerv(const oxcart_vec3f
 /**
  * 
  */
-OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_axis(float x, float y, float z, float angle)
+OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_angleaxis(float angle, float x, float y, float z)
 {
   oxcart_vec3f_t vec3;
 
@@ -1801,13 +1816,13 @@ OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_axis(float x, float y, fl
   vec3.d[2] = z;
   vec3 = oxcart_vec3f_normalize(&vec3);
 
-  return(oxcart_quatf_axisv(&vec3, angle));
+  return(oxcart_quatf_angleaxisv(angle, &vec3));
 }
 
 /**
  * 
  */
-OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_axisv(const oxcart_vec3f_t* v1, float angle)
+OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_angleaxisv(float angle, const oxcart_vec3f_t* v1)
 {
   float s, c;
   oxcart_quatf_t quat;
@@ -1830,12 +1845,41 @@ OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_axisv(const oxcart_vec3f_
  */
 OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_slerp(const oxcart_quatf_t* q1, const oxcart_quatf_t* q2, float t)
 {
-  oxcart_quatf_t quat;
+  float angle, rsa, s1, s2;
+  oxcart_quatf_t quat1;
+  oxcart_quatf_t quat2;
 
   OXCART_ASSERT(q1);
   OXCART_ASSERT(q2);
 
-  return(quat);
+  quat1 = *q1;
+  quat2 = *q2;
+
+  angle = oxcart_vec4f_dot(&quat1, &quat2);
+
+  /* if angle is less than 0, negate values to take short way around sphere */
+  if (angle < 0.0f) {
+    angle = -angle;
+    quat1.d[0] = -quat1.d[0];
+    quat1.d[1] = -quat1.d[1];
+    quat1.d[2] = -quat1.d[2];
+    quat1.d[3] = -quat1.d[3];
+  }
+
+  if (angle > (1.0f - FLT_EPSILON)) {
+    return(oxcart_vec4f_lerp(&quat1, &quat2, t));
+  }
+
+  t = oxcart_clampf(t, 0.0f, 1.0f);
+  angle = acosf(angle);
+  rsa = 1.0f / sinf(angle);
+  s1 = sinf(angle * (1.0f - t)) * rsa;
+  s2 = sinf(angle * t) * rsa;
+
+  quat1 = oxcart_quatf_multiplyscalar(&quat1, s1);
+  quat2 = oxcart_quatf_multiplyscalar(&quat2, s2);
+
+  return(oxcart_vec4f_add(&quat1, &quat2));
 }
 
 /**
@@ -1846,6 +1890,23 @@ OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_quatf_matrix(const oxcart_quatf
   oxcart_mat4f_t mat4;
 
   OXCART_ASSERT(q1);
+
+  mat4.d[ 0] = 1.0f - 2.0f * ((q1->d[1] * q1->d[1]) + (q1->d[2] * q1->d[2]));
+  mat4.d[ 1] =        2.0f * ((q1->d[0] * q1->d[1]) - (q1->d[2] * q1->d[3]));
+  mat4.d[ 2] =        2.0f * ((q1->d[0] * q1->d[2]) + (q1->d[1] * q1->d[3]));
+  mat4.d[ 3] =        0.0f;
+  mat4.d[ 4] =        2.0f * ((q1->d[0] * q1->d[1]) + (q1->d[2] * q1->d[3]));
+  mat4.d[ 5] = 1.0f - 2.0f * ((q1->d[0] * q1->d[0]) + (q1->d[2] * q1->d[2]));
+  mat4.d[ 6] =        2.0f * ((q1->d[1] * q1->d[2]) - (q1->d[0] * q1->d[3]));
+  mat4.d[ 7] =        0.0f;
+  mat4.d[ 8] =        2.0f * ((q1->d[0] * q1->d[2]) - (q1->d[1] * q1->d[3]));
+  mat4.d[ 9] =        2.0f * ((q1->d[1] * q1->d[2]) + (q1->d[0] * q1->d[3]));
+  mat4.d[10] = 1.0f - 2.0f * ((q1->d[0] * q1->d[0]) + (q1->d[1] * q1->d[1]));
+  mat4.d[11] =        0.0f;
+  mat4.d[12] =        0.0f;
+  mat4.d[13] =        0.0f;
+  mat4.d[14] =        0.0f;
+  mat4.d[15] =        1.0f;
 
   return(mat4);
 }

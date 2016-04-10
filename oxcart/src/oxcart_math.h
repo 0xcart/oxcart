@@ -207,12 +207,13 @@ OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_perspective(float fovy, f
 OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_lookat(const oxcart_vec3f_t* eye, const oxcart_vec3f_t* target, const oxcart_vec3f_t* up);
 OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_identity();
 OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_multiply(const oxcart_quatf_t* q1, const oxcart_quatf_t* q2);
+OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_multiplyscalar(const oxcart_quatf_t* q1, float s);
 OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_conjugate(const oxcart_quatf_t* q1);
 OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_inverse(const oxcart_quatf_t* q1);
 OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_euler(float x, float y, float z);
 OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_eulerv(const oxcart_vec3f_t* v1);
-OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_axis(float x, float y, float z, float angle);
-OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_axisv(const oxcart_vec3f_t* v1, float angle);
+OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_angleaxis(float angle, float x, float y, float z);
+OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_angleaxisv(float angle, const oxcart_vec3f_t* v1);
 OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_slerp(const oxcart_quatf_t* q1, const oxcart_quatf_t* q2, float t);
 OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_quatf_matrix(const oxcart_quatf_t* q1);
 
