@@ -70,6 +70,8 @@ int oxcart_delegate_windowcommand(int command)
  */
 void oxcart_delegate_windowevent(int event)
 {
+  int x, y, w, h;
+
   switch (event)
   {
     case OXCART_WINDOW_EVENT_CREATED:
@@ -80,6 +82,12 @@ void oxcart_delegate_windowevent(int event)
     case OXCART_WINDOW_EVENT_DESTROYED:
       oxcart_scene_terminate();
       oxcart_state_terminate();
+      break;
+
+    case OXCART_WINDOW_EVENT_MAXIMIZED:
+    case OXCART_WINDOW_EVENT_RESIZED:
+      oxcart_window_rect(&x, &y, &w, &h);
+      oxcart_scene_setviewport(w, h);
       break;
   }
 }

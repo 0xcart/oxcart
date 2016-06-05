@@ -246,7 +246,7 @@ void oxcart_window_setstyle(int style, int x, int y, int w, int h)
       break;
 
     case OXCART_WINDOW_STYLE_BORDER:
-      wndstyle = WS_OVERLAPPED | WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU;
+      wndstyle = WS_OVERLAPPED | WS_CAPTION | WS_MAXIMIZEBOX | WS_MINIMIZEBOX | WS_SYSMENU;
       break;
 
     default:
@@ -710,7 +710,7 @@ static void _window_initialize(const char* title, int style, int x, int y, int w
       break;
 
     case OXCART_WINDOW_STYLE_BORDER:
-      wndstyle = WS_OVERLAPPED | WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU;
+      wndstyle = WS_OVERLAPPED | WS_CAPTION | WS_MAXIMIZEBOX | WS_MINIMIZEBOX | WS_SYSMENU;
       break;
 
     default:
