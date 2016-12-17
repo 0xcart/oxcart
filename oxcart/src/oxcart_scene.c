@@ -28,7 +28,7 @@
 #include "oxcart_cube.h"
 #include "oxcart_gl.h"
 #include "oxcart_math.h"
-#include "oxcart_nvg.h"
+#include "oxcart_path.h"
 #include "oxcart_scene.h"
 #include "oxcart_state.h"
 #include "oxcart_text.h"
@@ -69,7 +69,7 @@ void oxcart_scene_initialize()
 
   /* initialize remaining scene elements */
   oxcart_text_initialize();
-  oxcart_nvg_initialize();
+  oxcart_path_initialize();
   oxcart_cube_initialize();
 
   _m.cube = oxcart_cube_create();
@@ -85,7 +85,7 @@ void oxcart_scene_terminate()
   oxcart_cube_destroy(_m.cube);
 
   oxcart_cube_terminate();
-  oxcart_nvg_terminate();
+  oxcart_path_terminate();
   oxcart_text_terminate();
   oxcart_camera_terminate();
 }
