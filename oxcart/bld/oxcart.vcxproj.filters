@@ -158,10 +158,10 @@
     <None Include="..\dat\config\oxcart_text.lua">
       <Filter>Data Files\Config Files</Filter>
     </None>
-    <None Include="..\dat\shader\oxcart_nvg.frag">
+    <None Include="..\dat\shader\oxcart_path.frag">
       <Filter>Data Files\Shader Files</Filter>
     </None>
-    <None Include="..\dat\shader\oxcart_nvg.vert">
+    <None Include="..\dat\shader\oxcart_path.vert">
       <Filter>Data Files\Shader Files</Filter>
     </None>
   </ItemGroup>

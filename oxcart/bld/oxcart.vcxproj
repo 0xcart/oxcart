@@ -208,8 +208,8 @@
     <None Include="..\dat\config\oxcart_text.lua" />
     <None Include="..\dat\shader\oxcart_cube.frag" />
     <None Include="..\dat\shader\oxcart_cube.vert" />
-    <None Include="..\dat\shader\oxcart_nvg.frag" />
-    <None Include="..\dat\shader\oxcart_nvg.vert" />
+    <None Include="..\dat\shader\oxcart_path.frag" />
+    <None Include="..\dat\shader\oxcart_path.vert" />
     <None Include="..\dat\shader\oxcart_text.frag" />
     <None Include="..\dat\shader\oxcart_text.vert" />
     <None Include="..\src\oxcart_math.inl" />
