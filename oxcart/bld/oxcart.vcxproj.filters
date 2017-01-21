@@ -73,9 +73,6 @@
     <ClCompile Include="..\src\oxcart_camera.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\oxcart_path.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\oxcart_assert.h">
@@ -130,9 +127,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\oxcart_camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\oxcart_path.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

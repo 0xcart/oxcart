@@ -13,10 +13,9 @@
 
 #### Internal Dependencies
 
-  * Freetype 2.7 (http://www.freetype.org/)
-  * LodePNG 20161127 (https://github.com/lvandeve/lodepng/)
   * Lua 5.1.5 (http://www.lua.org/)
   * PhysicsFS 2.0.3 (http://icculus.org/physfs/)
+  * Freetype 2.7 (http://www.freetype.org/)
 
 #### External Dependencies
 

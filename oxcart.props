@@ -9,9 +9,7 @@
     <LibDir>$(SolutionDir)$(ProjectName)\lib\</LibDir>
     <SrcDir>$(SolutionDir)$(ProjectName)\src\</SrcDir>
     <ToolsDir>$(SolutionDir)$(ProjectName)\tools\</ToolsDir>
-    <ChipmunkIncludeDir>$(SolutionDir)chipmunk\include\</ChipmunkIncludeDir>
     <FreetypeIncludeDir>$(SolutionDir)freetype\include\</FreetypeIncludeDir>
-    <LodepngIncludeDir>$(SolutionDir)lodepng\include\</LodepngIncludeDir>
     <LuaIncludeDir>$(SolutionDir)lua\include\</LuaIncludeDir>
     <PhysfsIncludeDir>$(SolutionDir)physfs\include\</PhysfsIncludeDir>
   </PropertyGroup>
@@ -39,14 +37,8 @@
     <BuildMacro Include="ToolsDir">
       <Value>$(ToolsDir)</Value>
     </BuildMacro>
-    <BuildMacro Include="ChipmunkIncludeDir">
-      <Value>$(ChipmunkIncludeDir)</Value>
-    </BuildMacro>
     <BuildMacro Include="FreetypeIncludeDir">
       <Value>$(FreetypeIncludeDir)</Value>
-    </BuildMacro>
-    <BuildMacro Include="LodepngIncludeDir">
-      <Value>$(LodepngIncludeDir)</Value>
     </BuildMacro>
     <BuildMacro Include="LuaIncludeDir">
       <Value>$(LuaIncludeDir)</Value>
