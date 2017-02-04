@@ -10,6 +10,7 @@
     <SrcDir>$(SolutionDir)$(ProjectName)\src\</SrcDir>
     <ToolsDir>$(SolutionDir)$(ProjectName)\tools\</ToolsDir>
     <FreetypeIncludeDir>$(SolutionDir)freetype\include\</FreetypeIncludeDir>
+    <LpngIncludeDir>$(SolutionDir)lpng\include\</LpngIncludeDir>
     <LuaIncludeDir>$(SolutionDir)lua\include\</LuaIncludeDir>
     <PhysfsIncludeDir>$(SolutionDir)physfs\include\</PhysfsIncludeDir>
     <ZlibIncludeDir>$(SolutionDir)zlib\include\</ZlibIncludeDir>
@@ -40,6 +41,9 @@
     </BuildMacro>
     <BuildMacro Include="FreetypeIncludeDir">
       <Value>$(FreetypeIncludeDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LpngIncludeDir">
+      <Value>$(LpngIncludeDir)</Value>
     </BuildMacro>
     <BuildMacro Include="LuaIncludeDir">
       <Value>$(LuaIncludeDir)</Value>
