@@ -13,6 +13,7 @@
     <LpngIncludeDir>$(SolutionDir)lpng\include\</LpngIncludeDir>
     <LuaIncludeDir>$(SolutionDir)lua\include\</LuaIncludeDir>
     <PhysfsIncludeDir>$(SolutionDir)physfs\include\</PhysfsIncludeDir>
+    <PixmanIncludeDir>$(SolutionDir)pixman\include\</PixmanIncludeDir>
     <ZlibIncludeDir>$(SolutionDir)zlib\include\</ZlibIncludeDir>
   </PropertyGroup>
   <PropertyGroup />
@@ -50,6 +51,9 @@
     </BuildMacro>
     <BuildMacro Include="PhysfsIncludeDir">
       <Value>$(PhysfsIncludeDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PixmanIncludeDir">
+      <Value>$(PixmanIncludeDir)</Value>
     </BuildMacro>
     <BuildMacro Include="ZlibIncludeDir">
       <Value>$(ZlibIncludeDir)</Value>
