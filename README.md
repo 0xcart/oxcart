@@ -13,9 +13,13 @@
 
 #### Internal Dependencies
 
+  * Cairo Graphics 1.14.8 (https://cairographics.org/)
+  * Freetype 2.7 (http://www.freetype.org/)
+  * Libpng 1.6.28 (http://www.libpng.org/pub/png/libpng.html)
   * Lua 5.1.5 (http://www.lua.org/)
   * PhysicsFS 2.0.3 (http://icculus.org/physfs/)
-  * Freetype 2.7 (http://www.freetype.org/)
+  * Pixman 0.34 (http://www.pixman.org)
+  * Zlib 1.2.11 (http://www.zlib.net)
 
 #### External Dependencies
 
@@ -26,7 +30,7 @@
 
 **oxcart** is licensed under the terms of the MIT license reproduced below.
 
-Copyright © 2016 Thomas J. Schaefer
+Copyright © 2017 Thomas J. Schaefer
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
 this software and associated documentation files (the "Software"), to deal in 
