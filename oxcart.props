@@ -9,6 +9,7 @@
     <LibDir>$(SolutionDir)$(ProjectName)\lib\</LibDir>
     <SrcDir>$(SolutionDir)$(ProjectName)\src\</SrcDir>
     <ToolsDir>$(SolutionDir)$(ProjectName)\tools\</ToolsDir>
+    <CairoIncludeDir>$(SolutionDir)cairo\include\</CairoIncludeDir>
     <FreetypeIncludeDir>$(SolutionDir)freetype\include\</FreetypeIncludeDir>
     <LpngIncludeDir>$(SolutionDir)lpng\include\</LpngIncludeDir>
     <LuaIncludeDir>$(SolutionDir)lua\include\</LuaIncludeDir>
@@ -39,6 +40,9 @@
     </BuildMacro>
     <BuildMacro Include="ToolsDir">
       <Value>$(ToolsDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="CairoIncludeDir">
+      <Value>$(CairoIncludeDir)</Value>
     </BuildMacro>
     <BuildMacro Include="FreetypeIncludeDir">
       <Value>$(FreetypeIncludeDir)</Value>
