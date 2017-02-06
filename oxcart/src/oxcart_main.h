@@ -21,8 +21,8 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef OXCART_APP_H
-#define OXCART_APP_H
+#ifndef OXCART_MAIN_H
+#define OXCART_MAIN_H
 
 #include <stddef.h>
 

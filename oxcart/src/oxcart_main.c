@@ -29,10 +29,10 @@
 #include <xinput.h>
 #include <physfs.h>
 #include "oxcart_assert.h"
-#include "oxcart_app.h"
 #include "oxcart_delegate.h"
 #include "oxcart_gl.h"
 #include "oxcart_lua.h"
+#include "oxcart_main.h"
 #include "oxcart_vector.h"
 #include "oxcart_wgl.h"
 
@@ -40,14 +40,14 @@
 #define OXCART_WINDOW_CLASSNAME "oxcart_window_t"
 #define OXCART_WM_CREATE (WM_APP + 1)
 
-typedef struct oxcart_appconfig_t oxcart_appconfig_t;
+typedef struct oxcart_mainconfig_t oxcart_mainconfig_t;
 typedef struct oxcart_monitor_t oxcart_monitor_t;
 typedef struct oxcart_time_t oxcart_time_t;
 typedef struct oxcart_xinput_t oxcart_xinput_t;
 typedef struct oxcart_window_t oxcart_window_t;
-typedef struct oxcart_appmodule_t oxcart_appmodule_t;
+typedef struct oxcart_mainmodule_t oxcart_mainmodule_t;
 
-struct oxcart_appconfig_t
+struct oxcart_mainconfig_t
 {
   int w, h;
   int fullscreen;
@@ -85,10 +85,10 @@ struct oxcart_window_t
   int x, y, w, h;
 };
 
-struct oxcart_appmodule_t
+struct oxcart_mainmodule_t
 {
   HMODULE hgl;
-  oxcart_appconfig_t config;
+  oxcart_mainconfig_t config;
   oxcart_vector_t* monitors;
   oxcart_time_t time;
   oxcart_xinput_t xinput;
@@ -98,7 +98,7 @@ struct oxcart_appmodule_t
 int oxcart_gl_extensions(int* major, int* minor);
 int oxcart_wgl_extensions();
 
-static void _app_initialize();
+static void _main_initialize();
 static void _monitor_initialize();
 static void _monitor_terminate();
 static int _monitor_add(const char* name, int primary);
@@ -116,7 +116,7 @@ static void _window_dummy(const char* title, int* major, int* minor);
 static LRESULT CALLBACK _window_proc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam);
 static int _keyboard_translate(WPARAM key);
 
-static oxcart_appmodule_t _m = {0};
+static oxcart_mainmodule_t _m = {0};
 
 /**
  * 
@@ -140,7 +140,7 @@ int main(int argc, char** argv)
     OXCART_ASSERT(!"PHYSFS_mount() failed");
   }
 
-  _app_initialize();
+  _main_initialize();
 
   _monitor_initialize();
   oxcart_monitor_rect(0, &x, &y, &w, &h);
@@ -424,21 +424,21 @@ PROC oxcart_proc_address(const char* name)
 /**
  * 
  */
-static void _app_initialize()
+static void _main_initialize()
 {
   lua_State* L;
 
   L = oxcart_lua_newstate();
 
-  if (OXCART_LUA_DOFILE(L, "/config/oxcart_app.lua")) {
+  if (OXCART_LUA_DOFILE(L, "/config/oxcart_main.lua")) {
     OXCART_ASSERT(!"OXCART_LUA_DOFILE() failed");
   }
 
-  _m.config.w = oxcart_lua_tointeger(L, "oxcart_app.window.width");
-  _m.config.h = oxcart_lua_tointeger(L, "oxcart_app.window.height");
-  _m.config.fullscreen = oxcart_lua_toboolean(L, "oxcart_app.window.fullscreen");
-  _m.config.vsync = oxcart_lua_toboolean(L, "oxcart_app.window.vsync");
-  _m.config.multisample = oxcart_lua_tointeger(L, "oxcart_app.format.multisample");
+  _m.config.w = oxcart_lua_tointeger(L, "oxcart_main.window.width");
+  _m.config.h = oxcart_lua_tointeger(L, "oxcart_main.window.height");
+  _m.config.fullscreen = oxcart_lua_toboolean(L, "oxcart_main.window.fullscreen");
+  _m.config.vsync = oxcart_lua_toboolean(L, "oxcart_main.window.vsync");
+  _m.config.multisample = oxcart_lua_tointeger(L, "oxcart_main.format.multisample");
 
   lua_close(L);
 }

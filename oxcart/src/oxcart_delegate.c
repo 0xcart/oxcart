@@ -21,8 +21,8 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include "oxcart_app.h"
 #include "oxcart_delegate.h"
+#include "oxcart_main.h"
 #include "oxcart_scene.h"
 #include "oxcart_state.h"
 

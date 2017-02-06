@@ -23,10 +23,10 @@
 
 #include <stdio.h>
 #include "oxcart_assert.h"
-#include "oxcart_app.h"
 #include "oxcart_camera.h"
 #include "oxcart_cube.h"
 #include "oxcart_gl.h"
+#include "oxcart_main.h"
 #include "oxcart_math.h"
 #include "oxcart_scene.h"
 #include "oxcart_state.h"

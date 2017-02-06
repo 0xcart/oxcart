@@ -26,8 +26,8 @@
 #include FT_STROKER_H
 #include <physfs.h>
 #include "oxcart_assert.h"
-#include "oxcart_app.h"
 #include "oxcart_font.h"
+#include "oxcart_main.h"
 #include "oxcart_util.h"
 #include "oxcart_vector.h"
 
