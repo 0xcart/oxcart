@@ -23,7 +23,7 @@
 
 #### External Dependencies
 
-  * Microsoft Visual Studio Community 2017
+  * Microsoft Visual Studio 2017 Community
 
 #### License
 
