@@ -367,9 +367,6 @@
     <ClCompile Include="..\src\cairo-fallback-compositor.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\cairo-fixed.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\cairo-font-face.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -593,9 +590,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\cairo-tee-surface.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\cairo-freed-pool.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

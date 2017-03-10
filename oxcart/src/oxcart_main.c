@@ -937,13 +937,13 @@ static LRESULT CALLBACK _window_proc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM 
     case WM_ACTIVATEAPP:
     {
       if (wparam) {
-        XInputEnable(1);
+        /* XInputEnable(1); _WIN32_WINNT=0x0A00 (i.e. Windows 10) enables this by default? */
         SetForegroundWindow(window->hwnd);
         LockSetForegroundWindow(LSFW_LOCK);
         oxcart_delegate_windowevent(OXCART_WINDOW_EVENT_ACTIVATED);
       }
       else {
-        XInputEnable(0);
+        /* XInputEnable(0); */
         oxcart_delegate_windowevent(OXCART_WINDOW_EVENT_DEACTIVATED);
       }
 

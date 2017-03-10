@@ -23,8 +23,7 @@
 
 #### External Dependencies
 
-  * Microsoft Visual Studio Community 2015
-  * Microsoft DirectX SDK (June 2010)
+  * Microsoft Visual Studio Community 2017
 
 #### License
 
