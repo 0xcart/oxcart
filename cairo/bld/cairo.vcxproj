@@ -255,7 +255,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;CAIRO_WIN32_STATIC_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(IncludeDir);$(LpngIncludeDir);$(PixmanIncludeDir);$(ZlibIncludeDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludeDir);$(LibpngIncludeDir);$(PixmanIncludeDir);$(ZlibIncludeDir)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
       <ExceptionHandling>false</ExceptionHandling>
@@ -278,7 +278,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;CAIRO_WIN32_STATIC_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(IncludeDir);$(LpngIncludeDir);$(PixmanIncludeDir);$(ZlibIncludeDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludeDir);$(LibpngIncludeDir);$(PixmanIncludeDir);$(ZlibIncludeDir)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
