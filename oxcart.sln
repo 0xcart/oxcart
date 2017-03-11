@@ -20,7 +20,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua", "lua\bld\lua.vcxproj"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "zlib\bld\zlib.vcxproj", "{7A2F308F-D904-49CA-9432-B71E3E9EB516}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lpng", "lpng\bld\lpng.vcxproj", "{117C751A-CCCD-421B-8951-799565618B3C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libpng", "libpng\bld\libpng.vcxproj", "{117C751A-CCCD-421B-8951-799565618B3C}"
 	ProjectSection(ProjectDependencies) = postProject
 		{7A2F308F-D904-49CA-9432-B71E3E9EB516} = {7A2F308F-D904-49CA-9432-B71E3E9EB516}
 	EndProjectSection

@@ -11,7 +11,7 @@
     <ToolsDir>$(SolutionDir)$(ProjectName)\tools\</ToolsDir>
     <CairoIncludeDir>$(SolutionDir)cairo\include\</CairoIncludeDir>
     <FreetypeIncludeDir>$(SolutionDir)freetype\include\</FreetypeIncludeDir>
-    <LpngIncludeDir>$(SolutionDir)lpng\include\</LpngIncludeDir>
+    <LpngIncludeDir>$(SolutionDir)libpng\include\</LpngIncludeDir>
     <LuaIncludeDir>$(SolutionDir)lua\include\</LuaIncludeDir>
     <PhysfsIncludeDir>$(SolutionDir)physfs\include\</PhysfsIncludeDir>
     <PixmanIncludeDir>$(SolutionDir)pixman\include\</PixmanIncludeDir>
