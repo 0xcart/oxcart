@@ -67,8 +67,8 @@ struct oxcart_atlas_t
   oxcart_vector_t* nodes;
 };
 
-int _atlas_fit(oxcart_atlas_t* atlas, int index, int w, int h, int* y);
-void _atlas_merge(oxcart_atlas_t* atlas);
+static int _atlas_fit(oxcart_atlas_t* atlas, int index, int w, int h, int* y);
+static void _atlas_merge(oxcart_atlas_t* atlas);
 
 /**
  * 
@@ -274,7 +274,7 @@ void oxcart_atlas_clear(oxcart_atlas_t* atlas)
 /**
  * 
  */
-int _atlas_fit(oxcart_atlas_t* atlas, int index, int w, int h, int* y)
+static int _atlas_fit(oxcart_atlas_t* atlas, int index, int w, int h, int* y)
 {
   int remainder;
   oxcart_atlasregion_t* node;
@@ -306,7 +306,7 @@ int _atlas_fit(oxcart_atlas_t* atlas, int index, int w, int h, int* y)
 /**
  * 
  */
-void _atlas_merge(oxcart_atlas_t* atlas)
+static void _atlas_merge(oxcart_atlas_t* atlas)
 {
   int i;
   oxcart_atlasregion_t* node;
