@@ -23,6 +23,12 @@
       <ParseFiles>false</ParseFiles>
       <Extensions>lua</Extensions>
     </Filter>
+    <Filter Include="Data Files\Lua Files">
+      <UniqueIdentifier>{f7ccb5dc-4dc4-4706-b408-a1cd32d4b414}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Files\Lua Files\jit">
+      <UniqueIdentifier>{9ea74456-5e8d-4003-a62c-4fe108802e99}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\oxcart_delegate.c">
@@ -151,6 +157,39 @@
     </None>
     <None Include="..\dat\config\oxcart_main.lua">
       <Filter>Data Files\Config Files</Filter>
+    </None>
+    <None Include="..\dat\lua\jit\bc.lua">
+      <Filter>Data Files\Lua Files\jit</Filter>
+    </None>
+    <None Include="..\dat\lua\jit\bcsave.lua">
+      <Filter>Data Files\Lua Files\jit</Filter>
+    </None>
+    <None Include="..\dat\lua\jit\dis_arm.lua">
+      <Filter>Data Files\Lua Files\jit</Filter>
+    </None>
+    <None Include="..\dat\lua\jit\dis_mips.lua">
+      <Filter>Data Files\Lua Files\jit</Filter>
+    </None>
+    <None Include="..\dat\lua\jit\dis_mipsel.lua">
+      <Filter>Data Files\Lua Files\jit</Filter>
+    </None>
+    <None Include="..\dat\lua\jit\dis_ppc.lua">
+      <Filter>Data Files\Lua Files\jit</Filter>
+    </None>
+    <None Include="..\dat\lua\jit\dis_x64.lua">
+      <Filter>Data Files\Lua Files\jit</Filter>
+    </None>
+    <None Include="..\dat\lua\jit\dis_x86.lua">
+      <Filter>Data Files\Lua Files\jit</Filter>
+    </None>
+    <None Include="..\dat\lua\jit\dump.lua">
+      <Filter>Data Files\Lua Files\jit</Filter>
+    </None>
+    <None Include="..\dat\lua\jit\v.lua">
+      <Filter>Data Files\Lua Files\jit</Filter>
+    </None>
+    <None Include="..\dat\lua\jit\vmdef.lua">
+      <Filter>Data Files\Lua Files\jit</Filter>
     </None>
   </ItemGroup>
 </Project>

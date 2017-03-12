@@ -202,6 +202,17 @@
   <ItemGroup>
     <None Include="..\dat\config\oxcart_main.lua" />
     <None Include="..\dat\config\oxcart_text.lua" />
+    <None Include="..\dat\lua\jit\bc.lua" />
+    <None Include="..\dat\lua\jit\bcsave.lua" />
+    <None Include="..\dat\lua\jit\dis_arm.lua" />
+    <None Include="..\dat\lua\jit\dis_mips.lua" />
+    <None Include="..\dat\lua\jit\dis_mipsel.lua" />
+    <None Include="..\dat\lua\jit\dis_ppc.lua" />
+    <None Include="..\dat\lua\jit\dis_x64.lua" />
+    <None Include="..\dat\lua\jit\dis_x86.lua" />
+    <None Include="..\dat\lua\jit\dump.lua" />
+    <None Include="..\dat\lua\jit\v.lua" />
+    <None Include="..\dat\lua\jit\vmdef.lua" />
     <None Include="..\dat\shader\oxcart_cube.frag" />
     <None Include="..\dat\shader\oxcart_cube.vert" />
     <None Include="..\dat\shader\oxcart_text.frag" />
