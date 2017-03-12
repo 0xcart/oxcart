@@ -3,7 +3,7 @@
 *A foundation for creating games on the Windows platform*
 
   * Written in C
-  * Lua 5.1 integration
+  * LuaJIT integration
   * OpenGL 4.5 core API support
   * PhysicsFS integration to provide abstract access to archives
 
@@ -16,7 +16,7 @@
   * Cairo Graphics 1.14.8 (https://cairographics.org/)
   * Freetype 2.7 (http://www.freetype.org/)
   * Libpng 1.6.28 (http://www.libpng.org/pub/png/libpng.html)
-  * Lua 5.1.5 (http://www.lua.org/)
+  * LuaJIT 2.0.4 (http://www.luajit.org/)
   * PhysicsFS 2.0.3 (http://icculus.org/physfs/)
   * Pixman 0.34 (http://www.pixman.org)
   * Zlib 1.2.11 (http://www.zlib.net)

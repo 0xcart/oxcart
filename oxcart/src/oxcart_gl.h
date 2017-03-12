@@ -24,7 +24,7 @@
 #ifndef OXCART_GL_H
 #define OXCART_GL_H
 
-#include <GL\glcorearb.h>
+#include <glcorearb.h>
 
 #ifdef __cplusplus
 extern "C" {

@@ -12,7 +12,8 @@
     <CairoIncludeDir>$(SolutionDir)cairo\include\</CairoIncludeDir>
     <FreetypeIncludeDir>$(SolutionDir)freetype\include\</FreetypeIncludeDir>
     <LibpngIncludeDir>$(SolutionDir)libpng\include\</LibpngIncludeDir>
-    <LuaIncludeDir>$(SolutionDir)lua\include\</LuaIncludeDir>
+    <LuaIncludeDir>$(SolutionDir)$(ProjectName)\include\lua</LuaIncludeDir>
+    <OpenGLIncludeDir>$(SolutionDir)$(ProjectName)\include\GL</OpenGLIncludeDir>
     <PhysfsIncludeDir>$(SolutionDir)physfs\include\</PhysfsIncludeDir>
     <PixmanIncludeDir>$(SolutionDir)pixman\include\</PixmanIncludeDir>
     <ZlibIncludeDir>$(SolutionDir)zlib\include\</ZlibIncludeDir>
@@ -52,6 +53,9 @@
     </BuildMacro>
     <BuildMacro Include="LuaIncludeDir">
       <Value>$(LuaIncludeDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="OpenGLIncludeDir">
+      <Value>$(OpenGLIncludeDir)</Value>
     </BuildMacro>
     <BuildMacro Include="PhysfsIncludeDir">
       <Value>$(PhysfsIncludeDir)</Value>

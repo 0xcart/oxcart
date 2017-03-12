@@ -24,8 +24,8 @@
 #ifndef OXCART_WGL_H
 #define OXCART_WGL_H
 
-#include <GL\glcorearb.h>
-#include <GL\wglext.h>
+#include <glcorearb.h>
+#include <wglext.h>
 
 #ifdef __cplusplus
 extern "C" {

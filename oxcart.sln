@@ -16,8 +16,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "freetype", "freetype\bld\fr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "physfs", "physfs\bld\physfs.vcxproj", "{442DB75E-6619-404B-A75B-DCCD66D3056E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua", "lua\bld\lua.vcxproj", "{08078815-96D1-4EE4-88B6-469BEA8B99DE}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "zlib\bld\zlib.vcxproj", "{7A2F308F-D904-49CA-9432-B71E3E9EB516}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libpng", "libpng\bld\libpng.vcxproj", "{117C751A-CCCD-421B-8951-799565618B3C}"
@@ -60,12 +58,6 @@ Global
 		{442DB75E-6619-404B-A75B-DCCD66D3056E}.release|Win32.ActiveCfg = release|Win32
 		{442DB75E-6619-404B-A75B-DCCD66D3056E}.release|Win32.Build.0 = release|Win32
 		{442DB75E-6619-404B-A75B-DCCD66D3056E}.release|x64.ActiveCfg = release|Win32
-		{08078815-96D1-4EE4-88B6-469BEA8B99DE}.debug|Win32.ActiveCfg = debug|Win32
-		{08078815-96D1-4EE4-88B6-469BEA8B99DE}.debug|Win32.Build.0 = debug|Win32
-		{08078815-96D1-4EE4-88B6-469BEA8B99DE}.debug|x64.ActiveCfg = debug|Win32
-		{08078815-96D1-4EE4-88B6-469BEA8B99DE}.release|Win32.ActiveCfg = release|Win32
-		{08078815-96D1-4EE4-88B6-469BEA8B99DE}.release|Win32.Build.0 = release|Win32
-		{08078815-96D1-4EE4-88B6-469BEA8B99DE}.release|x64.ActiveCfg = release|Win32
 		{7A2F308F-D904-49CA-9432-B71E3E9EB516}.debug|Win32.ActiveCfg = debug|Win32
 		{7A2F308F-D904-49CA-9432-B71E3E9EB516}.debug|Win32.Build.0 = debug|Win32
 		{7A2F308F-D904-49CA-9432-B71E3E9EB516}.debug|x64.ActiveCfg = debug|Win32
