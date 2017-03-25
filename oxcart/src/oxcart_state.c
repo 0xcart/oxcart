@@ -24,7 +24,7 @@
 #include "oxcart_assert.h"
 #include "oxcart_state.h"
 
-oxcart_state_t g_state = {0};
+static oxcart_state_t _m = {0};
 
 /**
  * 
@@ -45,10 +45,18 @@ void oxcart_state_terminate()
  */
 void oxcart_state_update(size_t now, size_t timestep)
 {
-  if (g_state.next_ang > 360.0f) {
-    g_state.next_ang -= 360.0f;
+  if (_m.next_ang > 360.0f) {
+    _m.next_ang -= 360.0f;
   }
 
-  g_state.prev_ang = g_state.next_ang;
-  g_state.next_ang += 360.0f / (1000.0f / timestep * 4);
+  _m.prev_ang = _m.next_ang;
+  _m.next_ang += 360.0f / (1000.0f / timestep * 4);
+}
+
+/**
+ * 
+ */
+oxcart_state_t* oxcart_state_reference()
+{
+  return(&_m);
 }

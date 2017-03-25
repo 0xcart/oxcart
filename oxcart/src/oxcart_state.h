@@ -41,8 +41,8 @@ struct oxcart_state_t
 void oxcart_state_initialize();
 void oxcart_state_terminate();
 void oxcart_state_update(size_t now, size_t timestep);
+oxcart_state_t* oxcart_state_reference();
 
-extern oxcart_state_t g_state;
 
 #ifdef __cplusplus
 }

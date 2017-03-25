@@ -36,7 +36,6 @@ extern "C" {
 #define OXCART_SHADER_ATTRIB_LOCATION_COLOR    3
 #define OXCART_SHADER_BINDPOINT_CAMERA_ORTHO   0
 #define OXCART_SHADER_BINDPOINT_CAMERA_PERSP   1
-#define OXCART_SHADER_BINDPOINT_PATH_FRAGMENT  2
 
 GLuint oxcart_shader_createwithfile(const GLchar* filename, GLenum type);
 GLuint oxcart_shader_createwithstr(const GLchar* str, GLenum type);

@@ -114,6 +114,7 @@ void oxcart_scene_draw(float coeff)
   float angle;
   size_t now;
   size_t elapsed;
+  oxcart_state_t* state;
   oxcart_mat4f_t rotate;
   oxcart_mat4f_t translate;
   oxcart_mat4f_t model;
@@ -135,8 +136,9 @@ void oxcart_scene_draw(float coeff)
 
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-  angle = (g_state.next_ang - g_state.prev_ang) * coeff;
-  angle += g_state.prev_ang;
+  state = oxcart_state_reference();
+  angle = (state->next_ang - state->prev_ang) * coeff;
+  angle += state->prev_ang;
   rotate = oxcart_mat4f_rotate(0.5f, 1.0f, 0.0f, OXCART_DEG2RADf(angle));
   translate = oxcart_mat4f_translate(0.0f, 0.0f, -20.0f);
   model = oxcart_mat4f_multiply(&translate, &rotate);
