@@ -50,7 +50,7 @@ void oxcart_state_update(size_t now, size_t timestep)
   }
 
   _m.prev_ang = _m.next_ang;
-  _m.next_ang += 360.0f / (1000.0f / timestep * 4);
+  _m.next_ang += 360.0f / (4000.0f / timestep);
 }
 
 /**
