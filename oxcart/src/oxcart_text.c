@@ -400,6 +400,7 @@ static oxcart_font_t *_text_font(oxcart_text_t *text, const oxcart_markup_t *mar
   int i;
   int size;
   float line;
+  const char *name;
   const char *filename;
   oxcart_vector_t *filenames;
   oxcart_font_t *font;
@@ -416,7 +417,9 @@ static oxcart_font_t *_text_font(oxcart_text_t *text, const oxcart_markup_t *mar
 
   for (i = 0; i < oxcart_vector_size(text->fonts); i++) {
     font = *(oxcart_font_t**)oxcart_vector_item(text->fonts, i);
+    oxcart_font_properties(font, &name, &size, &line);
 
+    if (!strncmp(filename, name, OXCART_FILEPATH_LENGTH) && (markup->size == size) && OXCART_ISEQUALf(markup->line, line, 0.001f)) {
       return(font);
     }
   }
