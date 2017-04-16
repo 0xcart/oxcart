@@ -36,13 +36,13 @@ extern "C" {
 #define OXCART_LUA_DOFILE(L, fn) (oxcart_lua_loadfile(L, fn) || oxcart_lua_pcall(L, 0, LUA_MULTRET))
 #define OXCART_LUA_DOSTRING(L, s) (luaL_loadstring(L, s) || oxcart_lua_pcall(L, 0, LUA_MULTRET))
 
-lua_State* oxcart_lua_newstate();
-int oxcart_lua_pcall(lua_State* L, int nargs, int nresults);
-int oxcart_lua_loadfile(lua_State* L, const char* filename);
-int oxcart_lua_toboolean(lua_State* L, const char* expr);
-int oxcart_lua_tointeger(lua_State* L, const char* expr);
-double oxcart_lua_tonumber(lua_State* L, const char* expr);
-const char* oxcart_lua_tostring(lua_State* L, const char* expr);
+lua_State *oxcart_lua_newstate();
+int oxcart_lua_pcall(lua_State *L, int nargs, int nresults);
+int oxcart_lua_loadfile(lua_State *L, const char *filename);
+int oxcart_lua_toboolean(lua_State *L, const char *expr);
+int oxcart_lua_tointeger(lua_State *L, const char *expr);
+double oxcart_lua_tonumber(lua_State *L, const char *expr);
+const char *oxcart_lua_tostring(lua_State *L, const char *expr);
 
 #ifdef __cplusplus
 }

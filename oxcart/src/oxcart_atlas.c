@@ -62,20 +62,20 @@ struct oxcart_atlasregion_t
 
 struct oxcart_atlas_t
 {
-  unsigned char* data;
+  unsigned char *data;
   int w, h, depth;
-  oxcart_vector_t* nodes;
+  oxcart_vector_t *nodes;
 };
 
-static int _atlas_fit(oxcart_atlas_t* atlas, int index, int w, int h, int* y);
-static void _atlas_merge(oxcart_atlas_t* atlas);
+static int _atlas_fit(oxcart_atlas_t *atlas, int index, int w, int h, int *y);
+static void _atlas_merge(oxcart_atlas_t *atlas);
 
 /**
  * 
  */
-oxcart_atlas_t* oxcart_atlas_create(int w, int h, int depth)
+oxcart_atlas_t *oxcart_atlas_create(int w, int h, int depth)
 {
-  oxcart_atlas_t* atlas;
+  oxcart_atlas_t *atlas;
   oxcart_atlasregion_t node;
 
   OXCART_ASSERT(w >= 4);
@@ -108,7 +108,7 @@ oxcart_atlas_t* oxcart_atlas_create(int w, int h, int depth)
 /**
  * 
  */
-void oxcart_atlas_destroy(oxcart_atlas_t* atlas)
+void oxcart_atlas_destroy(oxcart_atlas_t *atlas)
 {
   OXCART_ASSERT(atlas);
   OXCART_ASSERT(atlas->data);
@@ -121,7 +121,7 @@ void oxcart_atlas_destroy(oxcart_atlas_t* atlas)
 /**
  * 
  */
-void oxcart_atlas_properties(oxcart_atlas_t* atlas, int* w, int* h, int* depth)
+void oxcart_atlas_properties(oxcart_atlas_t *atlas, int *w, int *h, int *depth)
 {
   OXCART_ASSERT(atlas);
   OXCART_ASSERT(w);
@@ -136,7 +136,7 @@ void oxcart_atlas_properties(oxcart_atlas_t* atlas, int* w, int* h, int* depth)
 /**
  * 
  */
-const unsigned char* oxcart_atlas_data(oxcart_atlas_t* atlas)
+const unsigned char *oxcart_atlas_data(oxcart_atlas_t *atlas)
 {
   OXCART_ASSERT(atlas);
   OXCART_ASSERT(atlas->data);
@@ -147,7 +147,7 @@ const unsigned char* oxcart_atlas_data(oxcart_atlas_t* atlas)
 /**
  * 
  */
-int oxcart_atlas_reserve(oxcart_atlas_t* atlas, int w, int h, int* x, int* y)
+int oxcart_atlas_reserve(oxcart_atlas_t *atlas, int w, int h, int *x, int *y)
 {
   int i;
   int y1;
@@ -156,8 +156,8 @@ int oxcart_atlas_reserve(oxcart_atlas_t* atlas, int w, int h, int* x, int* y)
   int best_w = INT_MAX;
   int best_h = INT_MAX;
   oxcart_atlasregion_t item;
-  oxcart_atlasregion_t* node;
-  oxcart_atlasregion_t* prev;
+  oxcart_atlasregion_t *node;
+  oxcart_atlasregion_t *prev;
 
   OXCART_ASSERT(atlas);
   OXCART_ASSERT(w > 0);
@@ -227,7 +227,7 @@ int oxcart_atlas_reserve(oxcart_atlas_t* atlas, int w, int h, int* x, int* y)
 /**
  * 
  */
-void oxcart_atlas_fill(oxcart_atlas_t* atlas, int x, int y, int w, int h, int stride, const unsigned char* data)
+void oxcart_atlas_fill(oxcart_atlas_t *atlas, int x, int y, int w, int h, int stride, const unsigned char *data)
 {
   int i;
   int csize = sizeof(unsigned char);
@@ -252,7 +252,7 @@ void oxcart_atlas_fill(oxcart_atlas_t* atlas, int x, int y, int w, int h, int st
 /**
  * 
  */
-void oxcart_atlas_clear(oxcart_atlas_t* atlas)
+void oxcart_atlas_clear(oxcart_atlas_t *atlas)
 {
   oxcart_atlasregion_t node;
 
@@ -274,10 +274,10 @@ void oxcart_atlas_clear(oxcart_atlas_t* atlas)
 /**
  * 
  */
-static int _atlas_fit(oxcart_atlas_t* atlas, int index, int w, int h, int* y)
+static int _atlas_fit(oxcart_atlas_t *atlas, int index, int w, int h, int *y)
 {
   int remainder;
-  oxcart_atlasregion_t* node;
+  oxcart_atlasregion_t *node;
 
   OXCART_ASSERT(atlas);
   OXCART_ASSERT(y);
@@ -306,11 +306,11 @@ static int _atlas_fit(oxcart_atlas_t* atlas, int index, int w, int h, int* y)
 /**
  * 
  */
-static void _atlas_merge(oxcart_atlas_t* atlas)
+static void _atlas_merge(oxcart_atlas_t *atlas)
 {
   int i;
-  oxcart_atlasregion_t* node;
-  oxcart_atlasregion_t* next;
+  oxcart_atlasregion_t *node;
+  oxcart_atlasregion_t *next;
 
   OXCART_ASSERT(atlas);
 

@@ -23,7 +23,7 @@
 
 #include "oxcart_wgl.h"
 
-PROC oxcart_proc_address(const char* name);
+PROC oxcart_proc_address(const char *name);
 
 PFNWGLCREATECONTEXTATTRIBSARBPROC wglCreateContextAttribsARB;
 PFNWGLGETEXTENSIONSSTRINGARBPROC wglGetExtensionsStringARB;

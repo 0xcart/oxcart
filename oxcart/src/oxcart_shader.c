@@ -32,11 +32,11 @@
 /**
  * 
  */
-GLuint oxcart_shader_createwithfile(const GLchar* filename, GLenum type)
+GLuint oxcart_shader_createwithfile(const GLchar *filename, GLenum type)
 {
-  PHYSFS_File* file;
+  PHYSFS_File *file;
   PHYSFS_sint64 size;
-  GLchar* buffer;
+  GLchar *buffer;
   GLuint shader;
 
   OXCART_ASSERT(filename);
@@ -69,7 +69,7 @@ GLuint oxcart_shader_createwithfile(const GLchar* filename, GLenum type)
 /**
  * 
  */
-GLuint oxcart_shader_createwithstr(const GLchar* str, GLenum type)
+GLuint oxcart_shader_createwithstr(const GLchar *str, GLenum type)
 {
   GLuint shader;
   GLint status;
@@ -100,7 +100,7 @@ GLuint oxcart_shader_createwithstr(const GLchar* str, GLenum type)
 /**
  *
  */
-void oxcart_shader_destroy(const GLuint* shader, GLsizei count)
+void oxcart_shader_destroy(const GLuint *shader, GLsizei count)
 {
   GLsizei i;
 
@@ -115,7 +115,7 @@ void oxcart_shader_destroy(const GLuint* shader, GLsizei count)
 /**
  * 
  */
-GLuint oxcart_program_create(const GLuint* shader, GLsizei count)
+GLuint oxcart_program_create(const GLuint *shader, GLsizei count)
 {
   GLsizei i;
   GLuint program;

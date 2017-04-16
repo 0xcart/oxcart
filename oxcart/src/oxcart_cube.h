@@ -34,9 +34,9 @@ typedef struct oxcart_cube_t oxcart_cube_t;
 
 void oxcart_cube_initialize();
 void oxcart_cube_terminate();
-oxcart_cube_t* oxcart_cube_create();
-void oxcart_cube_destroy(oxcart_cube_t* cube);
-void oxcart_cube_draw(oxcart_cube_t* cube, const oxcart_mat4f_t* model);
+oxcart_cube_t *oxcart_cube_create();
+void oxcart_cube_destroy(oxcart_cube_t *cube);
+void oxcart_cube_draw(oxcart_cube_t *cube, const oxcart_mat4f_t *model);
 
 #ifdef __cplusplus
 }

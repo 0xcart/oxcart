@@ -24,7 +24,7 @@
 #include "oxcart_assert.h"
 #include "oxcart_gl.h"
 
-PROC oxcart_proc_address(const char* name);
+PROC oxcart_proc_address(const char *name);
 
 PFNGLCULLFACEPROC glCullFace;
 PFNGLFRONTFACEPROC glFrontFace;
@@ -679,9 +679,9 @@ PFNGLTEXTUREBARRIERPROC glTextureBarrier;
 /**
  * 
  */
-int oxcart_gl_extensions(int* major, int* minor)
+int oxcart_gl_extensions(int *major, int *minor)
 {
-  const GLubyte* text;
+  const GLubyte *text;
   int version;
   int error = 0;
   int status = 0;

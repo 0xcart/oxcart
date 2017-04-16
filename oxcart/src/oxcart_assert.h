@@ -34,7 +34,7 @@ extern "C" {
   #define OXCART_ASSERT(expr) ((void)0)
 #else
   #define OXCART_ASSERT(expr) (!!(expr) || (oxcart_assert(__FUNCTION__, __FILE__, __LINE__, #expr), 0))
-  void oxcart_assert(const char* func, const char* file, size_t line, const char* expr);
+  void oxcart_assert(const char *func, const char *file, size_t line, const char *expr);
 #endif
 
 #ifdef __cplusplus

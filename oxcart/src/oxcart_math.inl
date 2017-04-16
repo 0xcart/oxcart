@@ -132,7 +132,7 @@ OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_set(float x, float y)
 /**
  * 
  */
-OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_add(const oxcart_vec2f_t* v1, const oxcart_vec2f_t* v2)
+OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_add(const oxcart_vec2f_t *v1, const oxcart_vec2f_t *v2)
 {
   oxcart_vec2f_t vec2;
 
@@ -148,7 +148,7 @@ OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_add(const oxcart_vec2f_t*
 /**
  * 
  */
-OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_subtract(const oxcart_vec2f_t* v1, const oxcart_vec2f_t* v2)
+OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_subtract(const oxcart_vec2f_t *v1, const oxcart_vec2f_t *v2)
 {
   oxcart_vec2f_t vec2;
 
@@ -164,7 +164,7 @@ OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_subtract(const oxcart_vec
 /**
  * 
  */
-OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_multiply(const oxcart_vec2f_t* v1, const oxcart_vec2f_t* v2)
+OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_multiply(const oxcart_vec2f_t *v1, const oxcart_vec2f_t *v2)
 {
   oxcart_vec2f_t vec2;
 
@@ -180,7 +180,7 @@ OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_multiply(const oxcart_vec
 /**
  * 
  */
-OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_divide(const oxcart_vec2f_t* v1, const oxcart_vec2f_t* v2)
+OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_divide(const oxcart_vec2f_t *v1, const oxcart_vec2f_t *v2)
 {
   oxcart_vec2f_t vec2;
 
@@ -196,7 +196,7 @@ OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_divide(const oxcart_vec2f
 /**
  * 
  */
-OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_scale(const oxcart_vec2f_t* v1, float scale)
+OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_scale(const oxcart_vec2f_t *v1, float scale)
 {
   oxcart_vec2f_t vec2;
 
@@ -211,7 +211,7 @@ OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_scale(const oxcart_vec2f_
 /**
  * 
  */
-OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_negate(const oxcart_vec2f_t* v1)
+OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_negate(const oxcart_vec2f_t *v1)
 {
   oxcart_vec2f_t vec2;
 
@@ -226,7 +226,7 @@ OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_negate(const oxcart_vec2f
 /**
  * 
  */
-OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_sqrt(const oxcart_vec2f_t* v1)
+OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_sqrt(const oxcart_vec2f_t *v1)
 {
   oxcart_vec2f_t vec2;
 
@@ -241,7 +241,7 @@ OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_sqrt(const oxcart_vec2f_t
 /**
  * 
  */
-OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_rsqrt(const oxcart_vec2f_t* v1)
+OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_rsqrt(const oxcart_vec2f_t *v1)
 {
   oxcart_vec2f_t vec2;
 
@@ -256,7 +256,7 @@ OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_rsqrt(const oxcart_vec2f_
 /**
  * 
  */
-OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_normalize(const oxcart_vec2f_t* v1)
+OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_normalize(const oxcart_vec2f_t *v1)
 {
   float length;
   oxcart_vec2f_t vec2;
@@ -278,7 +278,7 @@ OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_normalize(const oxcart_ve
 /**
  * 
  */
-OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_lerp(const oxcart_vec2f_t* v1, const oxcart_vec2f_t* v2, float t)
+OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_lerp(const oxcart_vec2f_t *v1, const oxcart_vec2f_t *v2, float t)
 {
   float omt;
   oxcart_vec2f_t vec2;
@@ -298,7 +298,7 @@ OXCART_INLINE oxcart_vec2f_t OXCART_VCALL oxcart_vec2f_lerp(const oxcart_vec2f_t
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_vec2f_dot(const oxcart_vec2f_t* v1, const oxcart_vec2f_t* v2)
+OXCART_INLINE float OXCART_VCALL oxcart_vec2f_dot(const oxcart_vec2f_t *v1, const oxcart_vec2f_t *v2)
 {
   OXCART_ASSERT(v1);
   OXCART_ASSERT(v2);
@@ -309,7 +309,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_vec2f_dot(const oxcart_vec2f_t* v1, cons
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_vec2f_length(const oxcart_vec2f_t* v1)
+OXCART_INLINE float OXCART_VCALL oxcart_vec2f_length(const oxcart_vec2f_t *v1)
 {
   OXCART_ASSERT(v1);
 
@@ -319,7 +319,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_vec2f_length(const oxcart_vec2f_t* v1)
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_vec2f_rlength(const oxcart_vec2f_t* v1)
+OXCART_INLINE float OXCART_VCALL oxcart_vec2f_rlength(const oxcart_vec2f_t *v1)
 {
   OXCART_ASSERT(v1);
 
@@ -329,7 +329,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_vec2f_rlength(const oxcart_vec2f_t* v1)
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_vec2f_lengthsq(const oxcart_vec2f_t* v1)
+OXCART_INLINE float OXCART_VCALL oxcart_vec2f_lengthsq(const oxcart_vec2f_t *v1)
 {
   OXCART_ASSERT(v1);
 
@@ -339,7 +339,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_vec2f_lengthsq(const oxcart_vec2f_t* v1)
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_vec2f_angle(const oxcart_vec2f_t* v1, const oxcart_vec2f_t* v2)
+OXCART_INLINE float OXCART_VCALL oxcart_vec2f_angle(const oxcart_vec2f_t *v1, const oxcart_vec2f_t *v2)
 {
   float angle;
 
@@ -379,7 +379,7 @@ OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_set(float x, float y, flo
 /**
  * 
  */
-OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_setv2(const oxcart_vec2f_t* v1, float z)
+OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_setv2(const oxcart_vec2f_t *v1, float z)
 {
   oxcart_vec3f_t vec3;
 
@@ -395,7 +395,7 @@ OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_setv2(const oxcart_vec2f_
 /**
  * 
  */
-OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_add(const oxcart_vec3f_t* v1, const oxcart_vec3f_t* v2)
+OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_add(const oxcart_vec3f_t *v1, const oxcart_vec3f_t *v2)
 {
   oxcart_vec3f_t vec3;
 
@@ -412,7 +412,7 @@ OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_add(const oxcart_vec3f_t*
 /**
  * 
  */
-OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_subtract(const oxcart_vec3f_t* v1, const oxcart_vec3f_t* v2)
+OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_subtract(const oxcart_vec3f_t *v1, const oxcart_vec3f_t *v2)
 {
   oxcart_vec3f_t vec3;
 
@@ -429,7 +429,7 @@ OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_subtract(const oxcart_vec
 /**
  * 
  */
-OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_multiply(const oxcart_vec3f_t* v1, const oxcart_vec3f_t* v2)
+OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_multiply(const oxcart_vec3f_t *v1, const oxcart_vec3f_t *v2)
 {
   oxcart_vec3f_t vec3;
 
@@ -446,7 +446,7 @@ OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_multiply(const oxcart_vec
 /**
  * 
  */
-OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_divide(const oxcart_vec3f_t* v1, const oxcart_vec3f_t* v2)
+OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_divide(const oxcart_vec3f_t *v1, const oxcart_vec3f_t *v2)
 {
   oxcart_vec3f_t vec3;
 
@@ -463,7 +463,7 @@ OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_divide(const oxcart_vec3f
 /**
  * 
  */
-OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_scale(const oxcart_vec3f_t* v1, float scale)
+OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_scale(const oxcart_vec3f_t *v1, float scale)
 {
   oxcart_vec3f_t vec3;
 
@@ -479,7 +479,7 @@ OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_scale(const oxcart_vec3f_
 /**
  * 
  */
-OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_negate(const oxcart_vec3f_t* v1)
+OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_negate(const oxcart_vec3f_t *v1)
 {
   oxcart_vec3f_t vec3;
 
@@ -495,7 +495,7 @@ OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_negate(const oxcart_vec3f
 /**
  * 
  */
-OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_sqrt(const oxcart_vec3f_t* v1)
+OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_sqrt(const oxcart_vec3f_t *v1)
 {
   oxcart_vec3f_t vec3;
 
@@ -511,7 +511,7 @@ OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_sqrt(const oxcart_vec3f_t
 /**
  * 
  */
-OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_rsqrt(const oxcart_vec3f_t* v1)
+OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_rsqrt(const oxcart_vec3f_t *v1)
 {
   oxcart_vec3f_t vec3;
 
@@ -527,7 +527,7 @@ OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_rsqrt(const oxcart_vec3f_
 /**
  * 
  */
-OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_normalize(const oxcart_vec3f_t* v1)
+OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_normalize(const oxcart_vec3f_t *v1)
 {
   float length;
   oxcart_vec3f_t vec3;
@@ -550,7 +550,7 @@ OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_normalize(const oxcart_ve
 /**
  * 
  */
-OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_lerp(const oxcart_vec3f_t* v1, const oxcart_vec3f_t* v2, float t)
+OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_lerp(const oxcart_vec3f_t *v1, const oxcart_vec3f_t *v2, float t)
 {
   float omt;
   oxcart_vec3f_t vec3;
@@ -571,7 +571,7 @@ OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_lerp(const oxcart_vec3f_t
 /**
  * 
  */
-OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_cross(const oxcart_vec3f_t* v1, const oxcart_vec3f_t* v2)
+OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_cross(const oxcart_vec3f_t *v1, const oxcart_vec3f_t *v2)
 {
   oxcart_vec3f_t vec3;
 
@@ -588,7 +588,7 @@ OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_cross(const oxcart_vec3f_
 /**
  * 
  */
-OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_transform(const oxcart_vec3f_t* v1, const oxcart_mat3f_t* m1)
+OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_transform(const oxcart_vec3f_t *v1, const oxcart_mat3f_t *m1)
 {
   oxcart_vec3f_t vec3;
 
@@ -605,7 +605,7 @@ OXCART_INLINE oxcart_vec3f_t OXCART_VCALL oxcart_vec3f_transform(const oxcart_ve
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_vec3f_dot(const oxcart_vec3f_t* v1, const oxcart_vec3f_t* v2)
+OXCART_INLINE float OXCART_VCALL oxcart_vec3f_dot(const oxcart_vec3f_t *v1, const oxcart_vec3f_t *v2)
 {
   OXCART_ASSERT(v1);
   OXCART_ASSERT(v2);
@@ -616,7 +616,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_vec3f_dot(const oxcart_vec3f_t* v1, cons
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_vec3f_length(const oxcart_vec3f_t* v1)
+OXCART_INLINE float OXCART_VCALL oxcart_vec3f_length(const oxcart_vec3f_t *v1)
 {
   OXCART_ASSERT(v1);
 
@@ -626,7 +626,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_vec3f_length(const oxcart_vec3f_t* v1)
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_vec3f_rlength(const oxcart_vec3f_t* v1)
+OXCART_INLINE float OXCART_VCALL oxcart_vec3f_rlength(const oxcart_vec3f_t *v1)
 {
   OXCART_ASSERT(v1);
 
@@ -636,7 +636,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_vec3f_rlength(const oxcart_vec3f_t* v1)
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_vec3f_lengthsq(const oxcart_vec3f_t* v1)
+OXCART_INLINE float OXCART_VCALL oxcart_vec3f_lengthsq(const oxcart_vec3f_t *v1)
 {
   OXCART_ASSERT(v1);
 
@@ -646,7 +646,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_vec3f_lengthsq(const oxcart_vec3f_t* v1)
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_vec3f_angle(const oxcart_vec3f_t* v1, const oxcart_vec3f_t* v2)
+OXCART_INLINE float OXCART_VCALL oxcart_vec3f_angle(const oxcart_vec3f_t *v1, const oxcart_vec3f_t *v2)
 {
   float angle;
 
@@ -687,7 +687,7 @@ OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_set(float x, float y, flo
 /**
  * 
  */
-OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_setv2(const oxcart_vec2f_t* v1, float z, float w)
+OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_setv2(const oxcart_vec2f_t *v1, float z, float w)
 {
   oxcart_vec4f_t vec4;
 
@@ -704,7 +704,7 @@ OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_setv2(const oxcart_vec2f_
 /**
  * 
  */
-OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_setv3(const oxcart_vec3f_t* v1, float w)
+OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_setv3(const oxcart_vec3f_t *v1, float w)
 {
   oxcart_vec4f_t vec4;
 
@@ -736,7 +736,7 @@ OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_rgba(unsigned char r, uns
 /**
  * 
  */
-OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_add(const oxcart_vec4f_t* v1, const oxcart_vec4f_t* v2)
+OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_add(const oxcart_vec4f_t *v1, const oxcart_vec4f_t *v2)
 {
   oxcart_vec4f_t vec4;
 
@@ -754,7 +754,7 @@ OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_add(const oxcart_vec4f_t*
 /**
  * 
  */
-OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_subtract(const oxcart_vec4f_t* v1, const oxcart_vec4f_t* v2)
+OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_subtract(const oxcart_vec4f_t *v1, const oxcart_vec4f_t *v2)
 {
   oxcart_vec4f_t vec4;
 
@@ -772,7 +772,7 @@ OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_subtract(const oxcart_vec
 /**
  * 
  */
-OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_multiply(const oxcart_vec4f_t* v1, const oxcart_vec4f_t* v2)
+OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_multiply(const oxcart_vec4f_t *v1, const oxcart_vec4f_t *v2)
 {
   oxcart_vec4f_t vec4;
 
@@ -790,7 +790,7 @@ OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_multiply(const oxcart_vec
 /**
  * 
  */
-OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_divide(const oxcart_vec4f_t* v1, const oxcart_vec4f_t* v2)
+OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_divide(const oxcart_vec4f_t *v1, const oxcart_vec4f_t *v2)
 {
   oxcart_vec4f_t vec4;
 
@@ -808,7 +808,7 @@ OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_divide(const oxcart_vec4f
 /**
  * 
  */
-OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_scale(const oxcart_vec4f_t* v1, float scale)
+OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_scale(const oxcart_vec4f_t *v1, float scale)
 {
   oxcart_vec4f_t vec4;
 
@@ -825,7 +825,7 @@ OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_scale(const oxcart_vec4f_
 /**
  * 
  */
-OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_negate(const oxcart_vec4f_t* v1)
+OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_negate(const oxcart_vec4f_t *v1)
 {
   oxcart_vec4f_t vec4;
 
@@ -842,7 +842,7 @@ OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_negate(const oxcart_vec4f
 /**
  * 
  */
-OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_sqrt(const oxcart_vec4f_t* v1)
+OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_sqrt(const oxcart_vec4f_t *v1)
 {
   oxcart_vec4f_t vec4;
 
@@ -859,7 +859,7 @@ OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_sqrt(const oxcart_vec4f_t
 /**
  * 
  */
-OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_rsqrt(const oxcart_vec4f_t* v1)
+OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_rsqrt(const oxcart_vec4f_t *v1)
 {
   oxcart_vec4f_t vec4;
 
@@ -876,7 +876,7 @@ OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_rsqrt(const oxcart_vec4f_
 /**
  * 
  */
-OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_normalize(const oxcart_vec4f_t* v1)
+OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_normalize(const oxcart_vec4f_t *v1)
 {
   float length;
   oxcart_vec4f_t vec4;
@@ -900,7 +900,7 @@ OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_normalize(const oxcart_ve
 /**
  * 
  */
-OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_lerp(const oxcart_vec4f_t* v1, const oxcart_vec4f_t* v2, float t)
+OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_lerp(const oxcart_vec4f_t *v1, const oxcart_vec4f_t *v2, float t)
 {
   float omt;
   oxcart_vec4f_t vec4;
@@ -922,7 +922,7 @@ OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_lerp(const oxcart_vec4f_t
 /**
  * 
  */
-OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_cross(const oxcart_vec4f_t* v1, const oxcart_vec4f_t* v2)
+OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_cross(const oxcart_vec4f_t *v1, const oxcart_vec4f_t *v2)
 {
   oxcart_vec4f_t vec4;
 
@@ -940,7 +940,7 @@ OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_cross(const oxcart_vec4f_
 /**
  * 
  */
-OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_transform(const oxcart_vec4f_t* v1, const oxcart_mat4f_t* m1)
+OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_transform(const oxcart_vec4f_t *v1, const oxcart_mat4f_t *m1)
 {
   oxcart_vec4f_t vec4;
 
@@ -958,7 +958,7 @@ OXCART_INLINE oxcart_vec4f_t OXCART_VCALL oxcart_vec4f_transform(const oxcart_ve
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_vec4f_dot(const oxcart_vec4f_t* v1, const oxcart_vec4f_t* v2)
+OXCART_INLINE float OXCART_VCALL oxcart_vec4f_dot(const oxcart_vec4f_t *v1, const oxcart_vec4f_t *v2)
 {
   OXCART_ASSERT(v1);
   OXCART_ASSERT(v2);
@@ -969,7 +969,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_vec4f_dot(const oxcart_vec4f_t* v1, cons
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_vec4f_length(const oxcart_vec4f_t* v1)
+OXCART_INLINE float OXCART_VCALL oxcart_vec4f_length(const oxcart_vec4f_t *v1)
 {
   OXCART_ASSERT(v1);
 
@@ -979,7 +979,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_vec4f_length(const oxcart_vec4f_t* v1)
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_vec4f_rlength(const oxcart_vec4f_t* v1)
+OXCART_INLINE float OXCART_VCALL oxcart_vec4f_rlength(const oxcart_vec4f_t *v1)
 {
   OXCART_ASSERT(v1);
 
@@ -989,7 +989,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_vec4f_rlength(const oxcart_vec4f_t* v1)
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_vec4f_lengthsq(const oxcart_vec4f_t* v1)
+OXCART_INLINE float OXCART_VCALL oxcart_vec4f_lengthsq(const oxcart_vec4f_t *v1)
 {
   OXCART_ASSERT(v1);
 
@@ -999,7 +999,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_vec4f_lengthsq(const oxcart_vec4f_t* v1)
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_vec4f_angle(const oxcart_vec4f_t* v1, const oxcart_vec4f_t* v2)
+OXCART_INLINE float OXCART_VCALL oxcart_vec4f_angle(const oxcart_vec4f_t *v1, const oxcart_vec4f_t *v2)
 {
   float angle;
 
@@ -1070,7 +1070,7 @@ OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_translate(float x, float 
 /**
  * 
  */
-OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_translatev(const oxcart_vec2f_t* v1)
+OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_translatev(const oxcart_vec2f_t *v1)
 {
   oxcart_mat3f_t mat3;
 
@@ -1105,7 +1105,7 @@ OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_scale(float x, float y)
 /**
  * 
  */
-OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_scalev(const oxcart_vec2f_t* v1)
+OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_scalev(const oxcart_vec2f_t *v1)
 {
   oxcart_mat3f_t mat3;
 
@@ -1127,7 +1127,7 @@ OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_scalev(const oxcart_vec2f
 /**
  * 
  */
-OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_multiply(const oxcart_mat3f_t* m1, const oxcart_mat3f_t* m2)
+OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_multiply(const oxcart_mat3f_t *m1, const oxcart_mat3f_t *m2)
 {
   oxcart_mat3f_t mat3;
 
@@ -1150,7 +1150,7 @@ OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_multiply(const oxcart_mat
 /**
  * 
  */
-OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_transpose(const oxcart_mat3f_t* m1)
+OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_transpose(const oxcart_mat3f_t *m1)
 {
   oxcart_mat3f_t mat3;
 
@@ -1172,7 +1172,7 @@ OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_transpose(const oxcart_ma
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_mat3f_determinant(const oxcart_mat3f_t* m1)
+OXCART_INLINE float OXCART_VCALL oxcart_mat3f_determinant(const oxcart_mat3f_t *m1)
 {
   oxcart_vec3f_t vec3;
 
@@ -1188,7 +1188,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_mat3f_determinant(const oxcart_mat3f_t* 
 /**
  * 
  */
-OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_inverse(const oxcart_mat3f_t* m1, float* d)
+OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_inverse(const oxcart_mat3f_t *m1, float *d)
 {
   int i;
   float rd;
@@ -1223,7 +1223,7 @@ OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_inverse(const oxcart_mat3
 /**
  * 
  */
-OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_affineinverse(const oxcart_mat3f_t* m1)
+OXCART_INLINE oxcart_mat3f_t OXCART_VCALL oxcart_mat3f_affineinverse(const oxcart_mat3f_t *m1)
 {
   oxcart_vec3f_t tran;
   oxcart_mat3f_t mat3;
@@ -1259,7 +1259,7 @@ OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_identity()
 /**
  * 
  */
-OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_setm3(const oxcart_mat3f_t* m1)
+OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_setm3(const oxcart_mat3f_t *m1)
 {
   oxcart_mat4f_t mat4;
 
@@ -1303,7 +1303,7 @@ OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_rotate(float x, float y, 
 /**
  * 
  */
-OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_rotatev(const oxcart_vec3f_t* v1, float angle)
+OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_rotatev(const oxcart_vec3f_t *v1, float angle)
 {
   float s, c, omc;
   oxcart_mat4f_t mat4;
@@ -1360,7 +1360,7 @@ OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_translate(float x, float 
 /**
  * 
  */
-OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_translatev(const oxcart_vec3f_t* v1)
+OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_translatev(const oxcart_vec3f_t *v1)
 {
   oxcart_mat4f_t mat4;
 
@@ -1403,7 +1403,7 @@ OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_scale(float x, float y, f
 /**
  * 
  */
-OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_scalev(const oxcart_vec3f_t* v1)
+OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_scalev(const oxcart_vec3f_t *v1)
 {
   oxcart_mat4f_t mat4;
 
@@ -1432,7 +1432,7 @@ OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_scalev(const oxcart_vec3f
 /**
  * 
  */
-OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_multiply(const oxcart_mat4f_t* m1, const oxcart_mat4f_t* m2)
+OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_multiply(const oxcart_mat4f_t *m1, const oxcart_mat4f_t *m2)
 {
   oxcart_mat4f_t mat4;
 
@@ -1462,7 +1462,7 @@ OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_multiply(const oxcart_mat
 /**
  * 
  */
-OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_transpose(const oxcart_mat4f_t* m1)
+OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_transpose(const oxcart_mat4f_t *m1)
 {
   oxcart_mat4f_t mat4;
 
@@ -1491,7 +1491,7 @@ OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_transpose(const oxcart_ma
 /**
  * 
  */
-OXCART_INLINE float OXCART_VCALL oxcart_mat4f_determinant(const oxcart_mat4f_t* m1)
+OXCART_INLINE float OXCART_VCALL oxcart_mat4f_determinant(const oxcart_mat4f_t *m1)
 {
   oxcart_vec4f_t vec4;
 
@@ -1508,7 +1508,7 @@ OXCART_INLINE float OXCART_VCALL oxcart_mat4f_determinant(const oxcart_mat4f_t* 
 /**
  * 
  */
-OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_inverse(const oxcart_mat4f_t* m1, float* d)
+OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_inverse(const oxcart_mat4f_t *m1, float *d)
 {
   int i;
   float rd;
@@ -1550,7 +1550,7 @@ OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_inverse(const oxcart_mat4
 /**
  * 
  */
-OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_affineinverse(const oxcart_mat4f_t* m1)
+OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_affineinverse(const oxcart_mat4f_t *m1)
 {
   oxcart_vec4f_t tran;
   oxcart_mat4f_t mat4;
@@ -1643,7 +1643,7 @@ OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_perspective(float fovy, f
 /**
  * 
  */
-OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_lookat(const oxcart_vec3f_t* eye, const oxcart_vec3f_t* target, const oxcart_vec3f_t* up)
+OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_mat4f_lookat(const oxcart_vec3f_t *eye, const oxcart_vec3f_t *target, const oxcart_vec3f_t *up)
 {
   oxcart_vec3f_t x;
   oxcart_vec3f_t y;
@@ -1693,7 +1693,7 @@ OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_identity()
 /**
  * 
  */
-OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_multiply(const oxcart_quatf_t* q1, const oxcart_quatf_t* q2)
+OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_multiply(const oxcart_quatf_t *q1, const oxcart_quatf_t *q2)
 {
   oxcart_quatf_t quat;
 
@@ -1711,7 +1711,7 @@ OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_multiply(const oxcart_qua
 /**
  * 
  */
-OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_multiplyscalar(const oxcart_quatf_t* q1, float s)
+OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_multiplyscalar(const oxcart_quatf_t *q1, float s)
 {
   oxcart_quatf_t quat;
 
@@ -1728,7 +1728,7 @@ OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_multiplyscalar(const oxca
 /**
  * 
  */
-OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_conjugate(const oxcart_quatf_t* q1)
+OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_conjugate(const oxcart_quatf_t *q1)
 {
   oxcart_quatf_t quat;
 
@@ -1745,7 +1745,7 @@ OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_conjugate(const oxcart_qu
 /**
  * 
  */
-OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_inverse(const oxcart_quatf_t* q1)
+OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_inverse(const oxcart_quatf_t *q1)
 {
   float rls;
   oxcart_quatf_t quat;
@@ -1781,7 +1781,7 @@ OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_euler(float x, float y, f
 /**
  * 
  */
-OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_eulerv(const oxcart_vec3f_t* v1)
+OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_eulerv(const oxcart_vec3f_t *v1)
 {
   float s1, s2, s3;
   float c1, c2, c3;
@@ -1822,7 +1822,7 @@ OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_angleaxis(float angle, fl
 /**
  * 
  */
-OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_angleaxisv(float angle, const oxcart_vec3f_t* v1)
+OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_angleaxisv(float angle, const oxcart_vec3f_t *v1)
 {
   float s, c;
   oxcart_quatf_t quat;
@@ -1843,7 +1843,7 @@ OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_angleaxisv(float angle, c
 /**
  * 
  */
-OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_slerp(const oxcart_quatf_t* q1, const oxcart_quatf_t* q2, float t)
+OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_slerp(const oxcart_quatf_t *q1, const oxcart_quatf_t *q2, float t)
 {
   float angle, rsa, s1, s2;
   oxcart_quatf_t quat1;
@@ -1885,7 +1885,7 @@ OXCART_INLINE oxcart_quatf_t OXCART_VCALL oxcart_quatf_slerp(const oxcart_quatf_
 /**
  * 
  */
-OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_quatf_matrix(const oxcart_quatf_t* q1)
+OXCART_INLINE oxcart_mat4f_t OXCART_VCALL oxcart_quatf_matrix(const oxcart_quatf_t *q1)
 {
   oxcart_mat4f_t mat4;
 

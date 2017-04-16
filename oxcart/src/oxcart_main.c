@@ -89,30 +89,30 @@ struct oxcart_mainmodule_t
 {
   HMODULE hgl;
   oxcart_mainconfig_t config;
-  oxcart_vector_t* monitors;
+  oxcart_vector_t *monitors;
   oxcart_time_t time;
   oxcart_xinput_t xinput;
   oxcart_window_t window;
 };
 
-int oxcart_gl_extensions(int* major, int* minor);
+int oxcart_gl_extensions(int *major, int *minor);
 int oxcart_wgl_extensions();
 
 static void _main_initialize();
 static void _monitor_initialize();
 static void _monitor_terminate();
-static int _monitor_add(const char* name, int primary);
+static int _monitor_add(const char *name, int primary);
 static void _rawinput_initialize();
 static void _rawinput_terminate();
 static void _time_initialize();
 static void _time_terminate();
 static void _xinput_poll();
 static int _xinput_translate(WORD button);
-static void _window_initialize(const char* title, int style, int x, int y, int w, int h);
+static void _window_initialize(const char *title, int style, int x, int y, int w, int h);
 static void _window_terminate();
 static int _window_poll();
 static int _window_wait();
-static void _window_dummy(const char* title, int* major, int* minor);
+static void _window_dummy(const char *title, int *major, int *minor);
 static LRESULT CALLBACK _window_proc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam);
 static int _keyboard_translate(WPARAM key);
 
@@ -121,7 +121,7 @@ static oxcart_mainmodule_t _m = {0};
 /**
  * 
  */
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
   int x, y, w, h;
   size_t past;
@@ -270,7 +270,7 @@ void oxcart_window_setstyle(int style, int x, int y, int w, int h)
 /**
  * 
  */
-void oxcart_window_rect(int* x, int* y, int* w, int* h)
+void oxcart_window_rect(int *x, int *y, int *w, int *h)
 {
   OXCART_ASSERT(x);
   OXCART_ASSERT(y);
@@ -328,9 +328,9 @@ int oxcart_monitor_count()
 /**
  * 
  */
-void oxcart_monitor_rect(int index, int* x, int* y, int* w, int* h)
+void oxcart_monitor_rect(int index, int *x, int *y, int *w, int *h)
 {
-  oxcart_monitor_t* monitor;
+  oxcart_monitor_t *monitor;
 
   OXCART_ASSERT(x);
   OXCART_ASSERT(y);
@@ -348,7 +348,7 @@ void oxcart_monitor_rect(int index, int* x, int* y, int* w, int* h)
 /**
  * 
  */
-void oxcart_monitor_dpi(int* x, int* y)
+void oxcart_monitor_dpi(int *x, int *y)
 {
   OXCART_ASSERT(x);
   OXCART_ASSERT(y);
@@ -368,7 +368,7 @@ size_t oxcart_time_tick()
 /**
  * 
  */
-void oxcart_time_local(int* h, int* m, int* s, int* ms)
+void oxcart_time_local(int *h, int *m, int *s, int *ms)
 {
   SYSTEMTIME time;
 
@@ -388,7 +388,7 @@ void oxcart_time_local(int* h, int* m, int* s, int* ms)
 /**
  * 
  */
-void oxcart_time_system(int* h, int* m, int* s, int* ms)
+void oxcart_time_system(int *h, int *m, int *s, int *ms)
 {
   SYSTEMTIME time;
 
@@ -408,7 +408,7 @@ void oxcart_time_system(int* h, int* m, int* s, int* ms)
 /**
  * 
  */
-PROC oxcart_proc_address(const char* name)
+PROC oxcart_proc_address(const char *name)
 {
   PROC address;
 
@@ -426,7 +426,7 @@ PROC oxcart_proc_address(const char* name)
  */
 static void _main_initialize()
 {
-  lua_State* L;
+  lua_State *L;
 
   L = oxcart_lua_newstate();
 
@@ -496,7 +496,7 @@ static void _monitor_terminate()
 /**
  * 
  */
-static int _monitor_add(const char* name, int primary)
+static int _monitor_add(const char *name, int primary)
 {
   DEVMODE devmode;
   oxcart_monitor_t monitor;
@@ -669,7 +669,7 @@ static int _xinput_translate(WORD button)
 /**
  * 
  */
-static void _window_initialize(const char* title, int style, int x, int y, int w, int h)
+static void _window_initialize(const char *title, int style, int x, int y, int w, int h)
 {
   int i;
   int attribs[23];
@@ -845,7 +845,7 @@ static int _window_wait()
 /**
  * 
  */
-static void _window_dummy(const char* title, int* major, int* minor)
+static void _window_dummy(const char *title, int *major, int *minor)
 {
   int format;
   HWND hwnd;
@@ -912,7 +912,7 @@ static void _window_dummy(const char* title, int* major, int* minor)
  */
 static LRESULT CALLBACK _window_proc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 {
-  oxcart_window_t* window;
+  oxcart_window_t *window;
 
   if (!(window = (oxcart_window_t*)((LONG_PTR)GetWindowLongPtr(hwnd, GWLP_USERDATA)))) {
     return(DefWindowProc(hwnd, msg, wparam, lparam));

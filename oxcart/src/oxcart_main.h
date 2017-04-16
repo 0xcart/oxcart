@@ -189,18 +189,18 @@ int oxcart_window_visible();
 void oxcart_window_setvisible(int visible);
 int oxcart_window_style();
 void oxcart_window_setstyle(int style, int x, int y, int w, int h);
-void oxcart_window_rect(int* x, int* y, int* w, int* h);
+void oxcart_window_rect(int *x, int *y, int *w, int *h);
 void oxcart_window_setrect(int x, int y, int w, int h);
 int oxcart_window_vsync();
 void oxcart_window_setvsync(int vsync);
 
 int oxcart_monitor_count();
-void oxcart_monitor_rect(int index, int* x, int* y, int* w, int* h);
-void oxcart_monitor_dpi(int* x, int* y);
+void oxcart_monitor_rect(int index, int *x, int *y, int *w, int *h);
+void oxcart_monitor_dpi(int *x, int *y);
 
 size_t oxcart_time_tick();
-void oxcart_time_local(int* h, int* m, int* s, int* ms);
-void oxcart_time_system(int* h, int* m, int* s, int* ms);
+void oxcart_time_local(int *h, int *m, int *s, int *ms);
+void oxcart_time_system(int *h, int *m, int *s, int *ms);
 
 #ifdef __cplusplus
 }

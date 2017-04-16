@@ -56,7 +56,7 @@ void oxcart_state_update(size_t now, size_t timestep)
 /**
  * 
  */
-oxcart_state_t* oxcart_state_reference()
+oxcart_state_t *oxcart_state_reference()
 {
   return(&_m);
 }

@@ -31,7 +31,7 @@
 /**
  * 
  */
-void oxcart_assert(const char* func, const char* file, size_t line, const char* expr)
+void oxcart_assert(const char *func, const char *file, size_t line, const char *expr)
 {
   char message[OXCART_ASSERT_MESSAGE_LENGTH];
 

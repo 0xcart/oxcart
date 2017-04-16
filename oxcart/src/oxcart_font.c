@@ -41,8 +41,8 @@ struct oxcart_font_t
   char filename[OXCART_FILEPATH_LENGTH];
   int size;
   float line;
-  oxcart_atlas_t* atlas;
-  oxcart_vector_t* glyphs;
+  oxcart_atlas_t *atlas;
+  oxcart_vector_t *glyphs;
   float height;
   float ascent;
   float descent;
@@ -57,25 +57,25 @@ struct oxcart_glyph_t
   float advance;
   float s0, t0;
   float s1, t1;
-  oxcart_vector_t* kerning;
+  oxcart_vector_t *kerning;
 };
 
 struct oxcart_fontmodule_t
 {
   int codecnt;
-  const char* codes;
+  const char *codes;
 };
 
-static void _font_loadglyphs(oxcart_font_t* font);
+static void _font_loadglyphs(oxcart_font_t *font);
 
 static oxcart_fontmodule_t _m = {96, " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"};
 
 /**
  * 
  */
-oxcart_font_t* oxcart_font_create(const char* filename, int size, float line, oxcart_atlas_t* atlas)
+oxcart_font_t *oxcart_font_create(const char *filename, int size, float line, oxcart_atlas_t *atlas)
 {
-  oxcart_font_t* font;
+  oxcart_font_t *font;
 
   OXCART_ASSERT(filename);
   OXCART_ASSERT(size >= 8);
@@ -100,10 +100,10 @@ oxcart_font_t* oxcart_font_create(const char* filename, int size, float line, ox
 /**
  * 
  */
-void oxcart_font_destroy(oxcart_font_t* font)
+void oxcart_font_destroy(oxcart_font_t *font)
 {
   int i;
-  oxcart_glyph_t* glyph;
+  oxcart_glyph_t *glyph;
 
   OXCART_ASSERT(font);
 
@@ -119,7 +119,7 @@ void oxcart_font_destroy(oxcart_font_t* font)
 /**
  * 
  */
-const char* oxcart_font_properties(oxcart_font_t* font, int* size, float* line)
+const char *oxcart_font_properties(oxcart_font_t *font, int *size, float *line)
 {
   OXCART_ASSERT(font);
   OXCART_ASSERT(size);
@@ -134,7 +134,7 @@ const char* oxcart_font_properties(oxcart_font_t* font, int* size, float* line)
 /**
  * 
  */
-oxcart_atlas_t* oxcart_font_atlas(oxcart_font_t* font)
+oxcart_atlas_t *oxcart_font_atlas(oxcart_font_t *font)
 {
   OXCART_ASSERT(font);
 
@@ -144,7 +144,7 @@ oxcart_atlas_t* oxcart_font_atlas(oxcart_font_t* font)
 /**
  * 
  */
-void oxcart_font_metrics(oxcart_font_t* font, float* height, float* ascent, float* descent, float* advance)
+void oxcart_font_metrics(oxcart_font_t *font, float *height, float *ascent, float *descent, float *advance)
 {
   OXCART_ASSERT(font);
   OXCART_ASSERT(height);
@@ -161,7 +161,7 @@ void oxcart_font_metrics(oxcart_font_t* font, float* height, float* ascent, floa
 /**
  * 
  */
-oxcart_glyph_t* oxcart_font_glyph(oxcart_font_t* font, char code)
+oxcart_glyph_t *oxcart_font_glyph(oxcart_font_t *font, char code)
 {
   OXCART_ASSERT(font);
   OXCART_ASSERT(code >= _m.codes[0]);
@@ -172,7 +172,7 @@ oxcart_glyph_t* oxcart_font_glyph(oxcart_font_t* font, char code)
 /**
  * 
  */
-void oxcart_glyph_metrics(oxcart_glyph_t* glyph, float* w, float* h, float* bearing_x, float* bearing_y, float* advance)
+void oxcart_glyph_metrics(oxcart_glyph_t *glyph, float *w, float *h, float *bearing_x, float *bearing_y, float *advance)
 {
   OXCART_ASSERT(glyph);
   OXCART_ASSERT(w);
@@ -191,7 +191,7 @@ void oxcart_glyph_metrics(oxcart_glyph_t* glyph, float* w, float* h, float* bear
 /**
  * 
  */
-float oxcart_glyph_kerning(oxcart_glyph_t* glyph, char code)
+float oxcart_glyph_kerning(oxcart_glyph_t *glyph, char code)
 {
   OXCART_ASSERT(glyph);
   OXCART_ASSERT(code >= _m.codes[0]);
@@ -202,7 +202,7 @@ float oxcart_glyph_kerning(oxcart_glyph_t* glyph, char code)
 /**
  * 
  */
-void oxcart_glyph_texcoords(oxcart_glyph_t* glyph, float* s0, float* t0, float* s1, float* t1)
+void oxcart_glyph_texcoords(oxcart_glyph_t *glyph, float *s0, float *t0, float *s1, float *t1)
 {
   OXCART_ASSERT(glyph);
   OXCART_ASSERT(s0);
@@ -219,16 +219,16 @@ void oxcart_glyph_texcoords(oxcart_glyph_t* glyph, float* s0, float* t0, float* 
 /**
  * 
  */
-static void _font_loadglyphs(oxcart_font_t* font)
+static void _font_loadglyphs(oxcart_font_t *font)
 {
   int i, k;
   int dpi_x, dpi_y;
   int atl_w, atl_h, atl_d;
   int x, y, w, h;
   float kerning;
-  unsigned char* buffer;
+  unsigned char *buffer;
   oxcart_glyph_t glyph;
-  PHYSFS_File* file;
+  PHYSFS_File *file;
   PHYSFS_sint64 size;
   FT_Library ft_library;
   FT_Face ft_face;

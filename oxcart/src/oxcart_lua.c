@@ -30,23 +30,23 @@ typedef struct oxcart_luafdata_t oxcart_luafdata_t;
 
 struct oxcart_luafdata_t
 {
-  PHYSFS_file* file;
+  PHYSFS_file *file;
   char buffer[LUAL_BUFFERSIZE];
 };
 
-static void _lua_doexpr(lua_State* L, const char* expr);
-static int _lua_traceback(lua_State* L);
-static int _lua_searcher(lua_State* L);
-static int _lua_loadfile(lua_State* L);
-static const char* _lua_freader(lua_State* L, void* data, size_t* size);
+static void _lua_doexpr(lua_State *L, const char *expr);
+static int _lua_traceback(lua_State *L);
+static int _lua_searcher(lua_State *L);
+static int _lua_loadfile(lua_State *L);
+static const char *_lua_freader(lua_State *L, void *data, size_t *size);
 
 /**
  * 
  */
-lua_State* oxcart_lua_newstate()
+lua_State *oxcart_lua_newstate()
 {
   int i;
-  lua_State* L;
+  lua_State *L;
 
   if (!(L = luaL_newstate())) {
     OXCART_ASSERT(!"luaL_newstate() failed");
@@ -84,7 +84,7 @@ lua_State* oxcart_lua_newstate()
 /**
  * 
  */
-int oxcart_lua_pcall(lua_State* L, int nargs, int nresults)
+int oxcart_lua_pcall(lua_State *L, int nargs, int nresults)
 {
   int index;
   int status;
@@ -117,7 +117,7 @@ int oxcart_lua_pcall(lua_State* L, int nargs, int nresults)
 /**
  * 
  */
-int oxcart_lua_loadfile(lua_State* L, const char* filename)
+int oxcart_lua_loadfile(lua_State *L, const char *filename)
 {
   OXCART_ASSERT(L);
   OXCART_ASSERT(filename);
@@ -135,7 +135,7 @@ int oxcart_lua_loadfile(lua_State* L, const char* filename)
 /**
  * 
  */
-int oxcart_lua_toboolean(lua_State* L, const char* expr)
+int oxcart_lua_toboolean(lua_State *L, const char *expr)
 {
   OXCART_ASSERT(L);
   OXCART_ASSERT(expr);
@@ -156,7 +156,7 @@ int oxcart_lua_toboolean(lua_State* L, const char* expr)
 /**
  * 
  */
-int oxcart_lua_tointeger(lua_State* L, const char* expr)
+int oxcart_lua_tointeger(lua_State *L, const char *expr)
 {
   OXCART_ASSERT(L);
   OXCART_ASSERT(expr);
@@ -177,7 +177,7 @@ int oxcart_lua_tointeger(lua_State* L, const char* expr)
 /**
  * 
  */
-double oxcart_lua_tonumber(lua_State* L, const char* expr)
+double oxcart_lua_tonumber(lua_State *L, const char *expr)
 {
   OXCART_ASSERT(L);
   OXCART_ASSERT(expr);
@@ -198,7 +198,7 @@ double oxcart_lua_tonumber(lua_State* L, const char* expr)
 /**
  * 
  */
-const char* oxcart_lua_tostring(lua_State* L, const char* expr)
+const char *oxcart_lua_tostring(lua_State *L, const char *expr)
 {
   OXCART_ASSERT(L);
   OXCART_ASSERT(expr);
@@ -219,7 +219,7 @@ const char* oxcart_lua_tostring(lua_State* L, const char* expr)
 /**
  * 
  */
-static void _lua_doexpr(lua_State* L, const char* expr)
+static void _lua_doexpr(lua_State *L, const char *expr)
 {
   static char buffer[LUAL_BUFFERSIZE];
 
@@ -236,7 +236,7 @@ static void _lua_doexpr(lua_State* L, const char* expr)
 /**
  * 
  */
-static int _lua_traceback(lua_State* L)
+static int _lua_traceback(lua_State *L)
 {
   if (!lua_isstring(L, 1)) {
     return(1);
@@ -264,9 +264,9 @@ static int _lua_traceback(lua_State* L)
 /**
  * 
  */
-static int _lua_searcher(lua_State* L)
+static int _lua_searcher(lua_State *L)
 {
-  const char* module;
+  const char *module;
 
   if (!(module = luaL_checkstring(L, 1))) {
     return(lua_error(L));
@@ -285,10 +285,10 @@ static int _lua_searcher(lua_State* L)
 /**
  * 
  */
-static int _lua_loadfile(lua_State* L)
+static int _lua_loadfile(lua_State *L)
 {
   int status;
-  const char* filename;
+  const char *filename;
   oxcart_luafdata_t fdata;
 
   if (!(filename = luaL_checkstring(L, 1))) {
@@ -312,10 +312,10 @@ static int _lua_loadfile(lua_State* L)
 /**
  * 
  */
-static const char* _lua_freader(lua_State* L, void* data, size_t* size)
+static const char *_lua_freader(lua_State *L, void *data, size_t *size)
 {
   PHYSFS_sint64 count;
-  oxcart_luafdata_t* fdata = (oxcart_luafdata_t*)data;
+  oxcart_luafdata_t *fdata = (oxcart_luafdata_t*)data;
 
   if (0 >= (count = PHYSFS_read(fdata->file, fdata->buffer, 1, LUAL_BUFFERSIZE))) {
     *size = 0;

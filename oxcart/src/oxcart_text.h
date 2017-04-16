@@ -43,7 +43,7 @@ typedef struct oxcart_text_t oxcart_text_t;
 
 struct oxcart_markup_t
 {
-  char* name;
+  char *name;
   int size;
   int style;
   float line;
@@ -62,13 +62,13 @@ struct oxcart_metrics_t
 
 void oxcart_text_initialize();
 void oxcart_text_terminate();
-oxcart_text_t* oxcart_text_create();
-void oxcart_text_destroy(oxcart_text_t* text);
-void oxcart_text_metrics(oxcart_text_t* text, const oxcart_markup_t* markup, const char* str, int length, oxcart_metrics_t* metrics);
-void oxcart_text_assign(oxcart_text_t* text, const oxcart_markup_t* markup, const char* str, int length, oxcart_vec2f_t* pen);
-void oxcart_text_append(oxcart_text_t* text, const oxcart_markup_t* markup, const char* str, int length, oxcart_vec2f_t* pen);
-void oxcart_text_clear(oxcart_text_t* text);
-void oxcart_text_draw(oxcart_text_t* text, const oxcart_mat4f_t* model);
+oxcart_text_t *oxcart_text_create();
+void oxcart_text_destroy(oxcart_text_t *text);
+void oxcart_text_metrics(oxcart_text_t *text, const oxcart_markup_t *markup, const char *str, int length, oxcart_metrics_t *metrics);
+void oxcart_text_assign(oxcart_text_t *text, const oxcart_markup_t *markup, const char *str, int length, oxcart_vec2f_t *pen);
+void oxcart_text_append(oxcart_text_t *text, const oxcart_markup_t *markup, const char *str, int length, oxcart_vec2f_t *pen);
+void oxcart_text_clear(oxcart_text_t *text);
+void oxcart_text_draw(oxcart_text_t *text, const oxcart_mat4f_t *model);
 
 /**
  * 

@@ -45,7 +45,7 @@ typedef struct oxcart_textmodule_t oxcart_textmodule_t;
 
 struct oxcart_textconfig_t
 {
-  oxcart_hashmap_t* fontmap;
+  oxcart_hashmap_t *fontmap;
 };
 
 struct oxcart_textshader_t
@@ -66,12 +66,12 @@ struct oxcart_textvertex_t
 struct oxcart_text_t
 {
   int changed;
-  oxcart_atlas_t* atlas;
-  oxcart_vector_t* fonts;
+  oxcart_atlas_t *atlas;
+  oxcart_vector_t *fonts;
   int vcapacity;
-  oxcart_vector_t* vertices;
+  oxcart_vector_t *vertices;
   int icapacity;
-  oxcart_vector_t* indices;
+  oxcart_vector_t *indices;
   GLuint vao;
   GLuint vbo;
   GLuint ibo;
@@ -84,10 +84,10 @@ struct oxcart_textmodule_t
   oxcart_textshader_t shader;
 };
 
-static oxcart_font_t* _text_font(oxcart_text_t* text, const oxcart_markup_t* markup);
+static oxcart_font_t *_text_font(oxcart_text_t *text, const oxcart_markup_t *markup);
 static void _text_loadconfig();
 static void _text_loadshader();
-static void _fontmap_callback(const void* key, void* item, void* userdata);
+static void _fontmap_callback(const void *key, void *item, void *userdata);
 
 static oxcart_textmodule_t _m = {0};
 
@@ -112,9 +112,9 @@ void oxcart_text_terminate()
 /**
  * 
  */
-oxcart_text_t* oxcart_text_create()
+oxcart_text_t *oxcart_text_create()
 {
-  oxcart_text_t* text;
+  oxcart_text_t *text;
 
   if (!(text = (oxcart_text_t*)malloc(sizeof(oxcart_text_t)))) {
     OXCART_ASSERT(!"malloc() failed");
@@ -159,10 +159,10 @@ oxcart_text_t* oxcart_text_create()
 /**
  * 
  */
-void oxcart_text_destroy(oxcart_text_t* text)
+void oxcart_text_destroy(oxcart_text_t *text)
 {
   int i;
-  oxcart_font_t* font;
+  oxcart_font_t *font;
 
   OXCART_ASSERT(text);
 
@@ -186,7 +186,7 @@ void oxcart_text_destroy(oxcart_text_t* text)
 /**
  * 
  */
-void oxcart_text_metrics(oxcart_text_t* text, const oxcart_markup_t* markup, const char* str, int length, oxcart_metrics_t* metrics)
+void oxcart_text_metrics(oxcart_text_t *text, const oxcart_markup_t *markup, const char *str, int length, oxcart_metrics_t *metrics)
 {
   int i;
   float w, h;
@@ -195,8 +195,8 @@ void oxcart_text_metrics(oxcart_text_t* text, const oxcart_markup_t* markup, con
   float bearing_x;
   float bearing_y;
   float advance;
-  oxcart_font_t* font;
-  oxcart_glyph_t* glyph;
+  oxcart_font_t *font;
+  oxcart_glyph_t *glyph;
 
   OXCART_ASSERT(text);
   OXCART_ASSERT(markup);
@@ -248,7 +248,7 @@ void oxcart_text_metrics(oxcart_text_t* text, const oxcart_markup_t* markup, con
 /**
  * 
  */
-void oxcart_text_assign(oxcart_text_t* text, const oxcart_markup_t* markup, const char* str, int length, oxcart_vec2f_t* pen)
+void oxcart_text_assign(oxcart_text_t *text, const oxcart_markup_t *markup, const char *str, int length, oxcart_vec2f_t *pen)
 {
   OXCART_ASSERT(text);
   OXCART_ASSERT(markup);
@@ -264,7 +264,7 @@ void oxcart_text_assign(oxcart_text_t* text, const oxcart_markup_t* markup, cons
 /**
  * 
  */
-void oxcart_text_append(oxcart_text_t* text, const oxcart_markup_t* markup, const char* str, int length, oxcart_vec2f_t* pen)
+void oxcart_text_append(oxcart_text_t *text, const oxcart_markup_t *markup, const char *str, int length, oxcart_vec2f_t *pen)
 {
   int i;
   int index;
@@ -273,8 +273,8 @@ void oxcart_text_append(oxcart_text_t* text, const oxcart_markup_t* markup, cons
   float advance;
   float s0, t0, s1, t1;
   float x0, y0, x1, y1;
-  oxcart_font_t* font;
-  oxcart_glyph_t* glyph;
+  oxcart_font_t *font;
+  oxcart_glyph_t *glyph;
   oxcart_textvertex_t vertices[4];
   GLuint indices[6];
 
@@ -340,7 +340,7 @@ void oxcart_text_append(oxcart_text_t* text, const oxcart_markup_t* markup, cons
 /**
  * 
  */
-void oxcart_text_clear(oxcart_text_t* text)
+void oxcart_text_clear(oxcart_text_t *text)
 {
   OXCART_ASSERT(text);
 
@@ -352,7 +352,7 @@ void oxcart_text_clear(oxcart_text_t* text)
 /**
  * 
  */
-void oxcart_text_draw(oxcart_text_t* text, const oxcart_mat4f_t* model)
+void oxcart_text_draw(oxcart_text_t *text, const oxcart_mat4f_t *model)
 {
   OXCART_ASSERT(text);
   OXCART_ASSERT(model);
@@ -395,15 +395,15 @@ void oxcart_text_draw(oxcart_text_t* text, const oxcart_mat4f_t* model)
 /**
  * 
  */
-static oxcart_font_t* _text_font(oxcart_text_t* text, const oxcart_markup_t* markup)
+static oxcart_font_t *_text_font(oxcart_text_t *text, const oxcart_markup_t *markup)
 {
   int i;
   int size;
   float line;
-  const char* filename;
-  const char* filepath;
-  oxcart_vector_t* filepaths;
-  oxcart_font_t* font;
+  const char *filename;
+  const char *filepath;
+  oxcart_vector_t *filepaths;
+  oxcart_font_t *font;
 
   OXCART_ASSERT(text);
   OXCART_ASSERT(markup);
@@ -439,9 +439,9 @@ static oxcart_font_t* _text_font(oxcart_text_t* text, const oxcart_markup_t* mar
 static void _text_loadconfig()
 {
   int t, i;
-  lua_State* L;
-  char* key;
-  oxcart_vector_t* filepaths;
+  lua_State *L;
+  char *key;
+  oxcart_vector_t *filepaths;
   char filepath[OXCART_FILEPATH_LENGTH];
 
   _m.config.fontmap = oxcart_hashmap_create(oxcart_hashstr, oxcart_comparestr, 8);
@@ -530,7 +530,7 @@ static void _text_loadshader()
 /**
  * 
  */
-static void _fontmap_callback(void* key, void* item, void* userdata)
+static void _fontmap_callback(void *key, void *item, void *userdata)
 {
   OXCART_ASSERT(key);
   OXCART_ASSERT(item);

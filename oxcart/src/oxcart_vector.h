@@ -30,28 +30,28 @@ extern "C" {
 
 typedef struct oxcart_vector_t oxcart_vector_t;
 
-oxcart_vector_t* oxcart_vector_create(int itemsize, int capacity);
-void oxcart_vector_destroy(oxcart_vector_t* vector);
-int oxcart_vector_capacity(oxcart_vector_t* vector);
-int oxcart_vector_empty(oxcart_vector_t* vector);
-int oxcart_vector_size(oxcart_vector_t* vector);
-void oxcart_vector_reserve(oxcart_vector_t* vector, int capacity);
-void oxcart_vector_resize(oxcart_vector_t* vector, int size);
-void oxcart_vector_shrink(oxcart_vector_t* vector);
-void oxcart_vector_clear(oxcart_vector_t* vector);
-void* oxcart_vector_item(oxcart_vector_t* vector, int index);
-void* oxcart_vector_front(oxcart_vector_t* vector);
-void* oxcart_vector_back(oxcart_vector_t* vector);
-void* oxcart_vector_pushback(oxcart_vector_t* vector, const void* item);
-void* oxcart_vector_pushbackv(oxcart_vector_t* vector, const void* items, int count);
-void* oxcart_vector_insert(oxcart_vector_t* vector, int index, const void* item);
-void* oxcart_vector_insertv(oxcart_vector_t* vector, int index, const void* items, int count);
-void* oxcart_vector_replace(oxcart_vector_t* vector, int index, const void* item);
-void oxcart_vector_popback(oxcart_vector_t* vector);
-void oxcart_vector_erase(oxcart_vector_t* vector, int index);
-void oxcart_vector_eraserange(oxcart_vector_t* vector, int first, int last);
-int oxcart_vector_contains(oxcart_vector_t* vector, const void* item, int (*compare)(const void*, const void*));
-void oxcart_vector_sort(oxcart_vector_t* vector, int (*compare)(const void*, const void*));
+oxcart_vector_t *oxcart_vector_create(int itemsize, int capacity);
+void oxcart_vector_destroy(oxcart_vector_t *vector);
+int oxcart_vector_capacity(oxcart_vector_t *vector);
+int oxcart_vector_empty(oxcart_vector_t *vector);
+int oxcart_vector_size(oxcart_vector_t *vector);
+void oxcart_vector_reserve(oxcart_vector_t *vector, int capacity);
+void oxcart_vector_resize(oxcart_vector_t *vector, int size);
+void oxcart_vector_shrink(oxcart_vector_t *vector);
+void oxcart_vector_clear(oxcart_vector_t *vector);
+void* oxcart_vector_item(oxcart_vector_t *vector, int index);
+void* oxcart_vector_front(oxcart_vector_t *vector);
+void* oxcart_vector_back(oxcart_vector_t *vector);
+void* oxcart_vector_pushback(oxcart_vector_t *vector, const void *item);
+void* oxcart_vector_pushbackv(oxcart_vector_t *vector, const void *items, int count);
+void* oxcart_vector_insert(oxcart_vector_t *vector, int index, const void *item);
+void* oxcart_vector_insertv(oxcart_vector_t *vector, int index, const void *items, int count);
+void* oxcart_vector_replace(oxcart_vector_t *vector, int index, const void *item);
+void oxcart_vector_popback(oxcart_vector_t *vector);
+void oxcart_vector_erase(oxcart_vector_t *vector, int index);
+void oxcart_vector_eraserange(oxcart_vector_t *vector, int first, int last);
+int oxcart_vector_contains(oxcart_vector_t *vector, const void *item, int (*compare)(const void *, const void *));
+void oxcart_vector_sort(oxcart_vector_t *vector, int (*compare)(const void *, const void *));
 
 #ifdef __cplusplus
 }

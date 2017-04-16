@@ -93,7 +93,7 @@ void oxcart_camera_terminate()
 /**
  * 
  */
-void oxcart_camera_setview(int target, const oxcart_mat4f_t* view)
+void oxcart_camera_setview(int target, const oxcart_mat4f_t *view)
 {
   OXCART_ASSERT((target == OXCART_CAMERA_ORTHO) || (target == OXCART_CAMERA_PERSP));
   OXCART_ASSERT(view);
@@ -106,7 +106,7 @@ void oxcart_camera_setview(int target, const oxcart_mat4f_t* view)
 /**
  * 
  */
-void oxcart_camera_setprojection(int target, const oxcart_mat4f_t* projection)
+void oxcart_camera_setprojection(int target, const oxcart_mat4f_t *projection)
 {
   OXCART_ASSERT((target == OXCART_CAMERA_ORTHO) || (target == OXCART_CAMERA_PERSP));
   OXCART_ASSERT(projection);

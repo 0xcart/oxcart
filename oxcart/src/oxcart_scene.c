@@ -41,8 +41,8 @@ struct oxcart_scenemodule_t
   size_t osec;
   size_t fps;
   size_t frames;
-  oxcart_cube_t* cube;
-  oxcart_text_t* text;
+  oxcart_cube_t *cube;
+  oxcart_text_t *text;
 };
 
 static oxcart_scenemodule_t _m = {0};
@@ -114,7 +114,7 @@ void oxcart_scene_draw(float coeff)
   float angle;
   size_t now;
   size_t elapsed;
-  oxcart_state_t* state;
+  oxcart_state_t *state;
   oxcart_mat4f_t rotate;
   oxcart_mat4f_t translate;
   oxcart_mat4f_t model;

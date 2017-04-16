@@ -142,9 +142,9 @@ void oxcart_cube_terminate()
 /**
  * 
  */
-oxcart_cube_t* oxcart_cube_create()
+oxcart_cube_t *oxcart_cube_create()
 {
-  oxcart_cube_t* cube;
+  oxcart_cube_t *cube;
 
   if (!(cube = (oxcart_cube_t*)malloc(sizeof(oxcart_cube_t)))) {
     OXCART_ASSERT(!"malloc() failed");
@@ -178,7 +178,7 @@ oxcart_cube_t* oxcart_cube_create()
 /**
  * 
  */
-void oxcart_cube_destroy(oxcart_cube_t* cube)
+void oxcart_cube_destroy(oxcart_cube_t *cube)
 {
   OXCART_ASSERT(cube);
 
@@ -191,7 +191,7 @@ void oxcart_cube_destroy(oxcart_cube_t* cube)
 /**
  * 
  */
-void oxcart_cube_draw(oxcart_cube_t* cube, const oxcart_mat4f_t* model)
+void oxcart_cube_draw(oxcart_cube_t *cube, const oxcart_mat4f_t *model)
 {
   OXCART_ASSERT(cube);
   OXCART_ASSERT(model);

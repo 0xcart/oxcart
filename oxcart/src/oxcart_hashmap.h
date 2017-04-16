@@ -34,22 +34,22 @@ extern "C" {
 
 typedef struct oxcart_hashmap_t oxcart_hashmap_t;
 
-oxcart_hashmap_t* oxcart_hashmap_create(size_t (*hash)(const void*), int (*compare)(const void*, const void*), int capacity);
-void oxcart_hashmap_destroy(oxcart_hashmap_t* hashmap, void (*callback)(void* key, void* item, void* userdata), void* userdata);
-int oxcart_hashmap_capacity(oxcart_hashmap_t* hashmap);
-int oxcart_hashmap_empty(oxcart_hashmap_t* hashmap);
-int oxcart_hashmap_size(oxcart_hashmap_t* hashmap);
-int oxcart_hashmap_collisions(oxcart_hashmap_t* hashmap);
-void* oxcart_hashmap_item(oxcart_hashmap_t* hashmap, const void* key);
-void* oxcart_hashmap_insert(oxcart_hashmap_t* hashmap, void* key, void* item);
-void* oxcart_hashmap_erase(oxcart_hashmap_t* hashmap, const void* key);
-int oxcart_hashmap_contains(oxcart_hashmap_t* hashmap, const void* key);
-void oxcart_hashmap_foreach(oxcart_hashmap_t* hashmap, int (*callback)(const void* key, void* item, void* userdata), void* userdata);
+oxcart_hashmap_t *oxcart_hashmap_create(size_t (*hash)(const void *), int (*compare)(const void *, const void *), int capacity);
+void oxcart_hashmap_destroy(oxcart_hashmap_t *hashmap, void (*callback)(void *key, void *item, void *userdata), void *userdata);
+int oxcart_hashmap_capacity(oxcart_hashmap_t *hashmap);
+int oxcart_hashmap_empty(oxcart_hashmap_t *hashmap);
+int oxcart_hashmap_size(oxcart_hashmap_t *hashmap);
+int oxcart_hashmap_collisions(oxcart_hashmap_t *hashmap);
+void *oxcart_hashmap_item(oxcart_hashmap_t *hashmap, const void *key);
+void *oxcart_hashmap_insert(oxcart_hashmap_t *hashmap, void *key, void *item);
+void *oxcart_hashmap_erase(oxcart_hashmap_t *hashmap, const void *key);
+int oxcart_hashmap_contains(oxcart_hashmap_t *hashmap, const void *key);
+void oxcart_hashmap_foreach(oxcart_hashmap_t *hashmap, int (*callback)(const void *key, void *item, void *userdata), void *userdata);
 
 /**
  * FNV-1a hash function
  */
-OXCART_INLINE size_t oxcart_hashkey(const unsigned char* key, size_t size)
+OXCART_INLINE size_t oxcart_hashkey(const unsigned char *key, size_t size)
 {
   size_t i;
   size_t hash = 2166136261u;
@@ -68,7 +68,7 @@ OXCART_INLINE size_t oxcart_hashkey(const unsigned char* key, size_t size)
 /**
  * 
  */
-OXCART_INLINE size_t oxcart_hashint(const void* key)
+OXCART_INLINE size_t oxcart_hashint(const void *key)
 {
   OXCART_ASSERT(key);
 
@@ -78,7 +78,7 @@ OXCART_INLINE size_t oxcart_hashint(const void* key)
 /**
  * 
  */
-OXCART_INLINE size_t oxcart_hashstr(const void* key)
+OXCART_INLINE size_t oxcart_hashstr(const void *key)
 {
   OXCART_ASSERT(key);
 
@@ -88,7 +88,7 @@ OXCART_INLINE size_t oxcart_hashstr(const void* key)
 /**
  * 
  */
-OXCART_INLINE int oxcart_compareint(const void* key1, const void* key2)
+OXCART_INLINE int oxcart_compareint(const void *key1, const void *key2)
 {
   int val1;
   int val2;
@@ -113,7 +113,7 @@ OXCART_INLINE int oxcart_compareint(const void* key1, const void* key2)
 /**
  * 
  */
-OXCART_INLINE int oxcart_comparestr(const void* key1, const void* key2)
+OXCART_INLINE int oxcart_comparestr(const void *key1, const void *key2)
 {
   OXCART_ASSERT(key1);
   OXCART_ASSERT(key2);
