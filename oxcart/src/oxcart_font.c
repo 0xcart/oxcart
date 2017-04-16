@@ -1,23 +1,23 @@
 /**
  * oxcart is licensed under the terms of the MIT license reproduced below.
- * 
+ *
  * Copyright © 2017 Thomas J. Schaefer
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy of 
- * this software and associated documentation files (the "Software"), to deal in 
- * the Software without restriction, including without limitation the rights to 
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
  * the Software, and to permit persons to whom the Software is furnished to do so,
  * subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
- * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR 
- * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER 
- * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
@@ -71,7 +71,7 @@ static void _font_loadglyphs(oxcart_font_t *font);
 static oxcart_fontmodule_t _m = {96, " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"};
 
 /**
- * 
+ *
  */
 oxcart_font_t *oxcart_font_create(const char *filename, int size, float line, oxcart_atlas_t *atlas)
 {
@@ -98,7 +98,7 @@ oxcart_font_t *oxcart_font_create(const char *filename, int size, float line, ox
 }
 
 /**
- * 
+ *
  */
 void oxcart_font_destroy(oxcart_font_t *font)
 {
@@ -117,7 +117,7 @@ void oxcart_font_destroy(oxcart_font_t *font)
 }
 
 /**
- * 
+ *
  */
 void oxcart_font_properties(oxcart_font_t *font, const char **name, int *size, float *line)
 {
@@ -132,7 +132,7 @@ void oxcart_font_properties(oxcart_font_t *font, const char **name, int *size, f
 }
 
 /**
- * 
+ *
  */
 oxcart_atlas_t *oxcart_font_atlas(oxcart_font_t *font)
 {
@@ -142,7 +142,7 @@ oxcart_atlas_t *oxcart_font_atlas(oxcart_font_t *font)
 }
 
 /**
- * 
+ *
  */
 void oxcart_font_metrics(oxcart_font_t *font, float *height, float *ascent, float *descent, float *advance)
 {
@@ -159,7 +159,7 @@ void oxcart_font_metrics(oxcart_font_t *font, float *height, float *ascent, floa
 }
 
 /**
- * 
+ *
  */
 oxcart_glyph_t *oxcart_font_glyph(oxcart_font_t *font, char code)
 {
@@ -170,7 +170,7 @@ oxcart_glyph_t *oxcart_font_glyph(oxcart_font_t *font, char code)
 }
 
 /**
- * 
+ *
  */
 void oxcart_glyph_metrics(oxcart_glyph_t *glyph, float *w, float *h, float *bearing_x, float *bearing_y, float *advance)
 {
@@ -189,7 +189,7 @@ void oxcart_glyph_metrics(oxcart_glyph_t *glyph, float *w, float *h, float *bear
 }
 
 /**
- * 
+ *
  */
 float oxcart_glyph_kerning(oxcart_glyph_t *glyph, char code)
 {
@@ -200,7 +200,7 @@ float oxcart_glyph_kerning(oxcart_glyph_t *glyph, char code)
 }
 
 /**
- * 
+ *
  */
 void oxcart_glyph_texcoords(oxcart_glyph_t *glyph, float *s0, float *t0, float *s1, float *t1)
 {
@@ -217,7 +217,7 @@ void oxcart_glyph_texcoords(oxcart_glyph_t *glyph, float *s0, float *t0, float *
 }
 
 /**
- * 
+ *
  */
 static void _font_loadglyphs(oxcart_font_t *font)
 {

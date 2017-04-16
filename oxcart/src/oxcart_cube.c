@@ -1,23 +1,23 @@
 /**
  * oxcart is licensed under the terms of the MIT license reproduced below.
- * 
+ *
  * Copyright © 2017 Thomas J. Schaefer
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy of 
- * this software and associated documentation files (the "Software"), to deal in 
- * the Software without restriction, including without limitation the rights to 
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
  * the Software, and to permit persons to whom the Software is furnished to do so,
  * subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
- * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR 
- * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER 
- * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
@@ -124,7 +124,7 @@ static const GLuint _indices[] = {
 static oxcart_cubemodule_t _m = {0};
 
 /**
- * 
+ *
  */
 void oxcart_cube_initialize()
 {
@@ -132,7 +132,7 @@ void oxcart_cube_initialize()
 }
 
 /**
- * 
+ *
  */
 void oxcart_cube_terminate()
 {
@@ -140,7 +140,7 @@ void oxcart_cube_terminate()
 }
 
 /**
- * 
+ *
  */
 oxcart_cube_t *oxcart_cube_create()
 {
@@ -176,7 +176,7 @@ oxcart_cube_t *oxcart_cube_create()
 }
 
 /**
- * 
+ *
  */
 void oxcart_cube_destroy(oxcart_cube_t *cube)
 {
@@ -189,7 +189,7 @@ void oxcart_cube_destroy(oxcart_cube_t *cube)
 }
 
 /**
- * 
+ *
  */
 void oxcart_cube_draw(oxcart_cube_t *cube, const oxcart_mat4f_t *model)
 {
@@ -205,7 +205,7 @@ void oxcart_cube_draw(oxcart_cube_t *cube, const oxcart_mat4f_t *model)
 }
 
 /**
- * 
+ *
  */
 static void _cube_loadshader()
 {

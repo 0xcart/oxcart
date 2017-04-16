@@ -1,23 +1,23 @@
 /**
  * oxcart is licensed under the terms of the MIT license reproduced below.
- * 
+ *
  * Copyright © 2017 Thomas J. Schaefer
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy of 
- * this software and associated documentation files (the "Software"), to deal in 
- * the Software without restriction, including without limitation the rights to 
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
  * the Software, and to permit persons to whom the Software is furnished to do so,
  * subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
- * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR 
- * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER 
- * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
@@ -92,7 +92,7 @@ static void _fontmap_callback(const void *key, void *item, void *userdata);
 static oxcart_textmodule_t _m = {0};
 
 /**
- * 
+ *
  */
 void oxcart_text_initialize()
 {
@@ -101,7 +101,7 @@ void oxcart_text_initialize()
 }
 
 /**
- * 
+ *
  */
 void oxcart_text_terminate()
 {
@@ -110,7 +110,7 @@ void oxcart_text_terminate()
 }
 
 /**
- * 
+ *
  */
 oxcart_text_t *oxcart_text_create()
 {
@@ -157,7 +157,7 @@ oxcart_text_t *oxcart_text_create()
 }
 
 /**
- * 
+ *
  */
 void oxcart_text_destroy(oxcart_text_t *text)
 {
@@ -184,7 +184,7 @@ void oxcart_text_destroy(oxcart_text_t *text)
 }
 
 /**
- * 
+ *
  */
 void oxcart_text_metrics(oxcart_text_t *text, const oxcart_markup_t *markup, const char *str, int length, oxcart_metrics_t *metrics)
 {
@@ -246,7 +246,7 @@ void oxcart_text_metrics(oxcart_text_t *text, const oxcart_markup_t *markup, con
 }
 
 /**
- * 
+ *
  */
 void oxcart_text_assign(oxcart_text_t *text, const oxcart_markup_t *markup, const char *str, int length, oxcart_vec2f_t *pen)
 {
@@ -262,7 +262,7 @@ void oxcart_text_assign(oxcart_text_t *text, const oxcart_markup_t *markup, cons
 }
 
 /**
- * 
+ *
  */
 void oxcart_text_append(oxcart_text_t *text, const oxcart_markup_t *markup, const char *str, int length, oxcart_vec2f_t *pen)
 {
@@ -338,7 +338,7 @@ void oxcart_text_append(oxcart_text_t *text, const oxcart_markup_t *markup, cons
 }
 
 /**
- * 
+ *
  */
 void oxcart_text_clear(oxcart_text_t *text)
 {
@@ -350,7 +350,7 @@ void oxcart_text_clear(oxcart_text_t *text)
 }
 
 /**
- * 
+ *
  */
 void oxcart_text_draw(oxcart_text_t *text, const oxcart_mat4f_t *model)
 {
@@ -393,7 +393,7 @@ void oxcart_text_draw(oxcart_text_t *text, const oxcart_mat4f_t *model)
 }
 
 /**
- * 
+ *
  */
 static oxcart_font_t *_text_font(oxcart_text_t *text, const oxcart_markup_t *markup)
 {
@@ -434,7 +434,7 @@ static oxcart_font_t *_text_font(oxcart_text_t *text, const oxcart_markup_t *mar
 }
 
 /**
- * 
+ *
  */
 static void _text_loadconfig()
 {
@@ -502,7 +502,7 @@ static void _text_loadconfig()
 }
 
 /**
- * 
+ *
  */
 static void _text_loadshader()
 {
@@ -528,7 +528,7 @@ static void _text_loadshader()
 }
 
 /**
- * 
+ *
  */
 static void _fontmap_callback(void *key, void *item, void *userdata)
 {

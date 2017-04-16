@@ -1,23 +1,23 @@
 /**
  * oxcart is licensed under the terms of the MIT license reproduced below.
- * 
+ *
  * Copyright © 2017 Thomas J. Schaefer
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy of 
- * this software and associated documentation files (the "Software"), to deal in 
- * the Software without restriction, including without limitation the rights to 
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
  * the Software, and to permit persons to whom the Software is furnished to do so,
  * subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
- * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR 
- * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER 
- * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
@@ -119,7 +119,7 @@ static int _keyboard_translate(WPARAM key);
 static oxcart_mainmodule_t _m = {0};
 
 /**
- * 
+ *
  */
 int main(int argc, char **argv)
 {
@@ -174,7 +174,7 @@ int main(int argc, char **argv)
 }
 
 /**
- * 
+ *
  */
 void oxcart_window_close()
 {
@@ -182,7 +182,7 @@ void oxcart_window_close()
 }
 
 /**
- * 
+ *
  */
 void oxcart_window_swap()
 {
@@ -190,7 +190,7 @@ void oxcart_window_swap()
 }
 
 /**
- * 
+ *
  */
 int oxcart_window_visible()
 {
@@ -198,7 +198,7 @@ int oxcart_window_visible()
 }
 
 /**
- * 
+ *
  */
 void oxcart_window_setvisible(int visible)
 {
@@ -206,7 +206,7 @@ void oxcart_window_setvisible(int visible)
 }
 
 /**
- * 
+ *
  */
 int oxcart_window_style()
 {
@@ -222,7 +222,7 @@ int oxcart_window_style()
 }
 
 /**
- * 
+ *
  */
 void oxcart_window_setstyle(int style, int x, int y, int w, int h)
 {
@@ -268,7 +268,7 @@ void oxcart_window_setstyle(int style, int x, int y, int w, int h)
 }
 
 /**
- * 
+ *
  */
 void oxcart_window_rect(int *x, int *y, int *w, int *h)
 {
@@ -284,7 +284,7 @@ void oxcart_window_rect(int *x, int *y, int *w, int *h)
 }
 
 /**
- * 
+ *
  */
 void oxcart_window_setrect(int x, int y, int w, int h)
 {
@@ -302,7 +302,7 @@ void oxcart_window_setrect(int x, int y, int w, int h)
 }
 
 /**
- * 
+ *
  */
 int oxcart_window_vsync()
 {
@@ -310,7 +310,7 @@ int oxcart_window_vsync()
 }
 
 /**
- * 
+ *
  */
 void oxcart_window_setvsync(int vsync)
 {
@@ -318,7 +318,7 @@ void oxcart_window_setvsync(int vsync)
 }
 
 /**
- * 
+ *
  */
 int oxcart_monitor_count()
 {
@@ -326,7 +326,7 @@ int oxcart_monitor_count()
 }
 
 /**
- * 
+ *
  */
 void oxcart_monitor_rect(int index, int *x, int *y, int *w, int *h)
 {
@@ -346,7 +346,7 @@ void oxcart_monitor_rect(int index, int *x, int *y, int *w, int *h)
 }
 
 /**
- * 
+ *
  */
 void oxcart_monitor_dpi(int *x, int *y)
 {
@@ -358,7 +358,7 @@ void oxcart_monitor_dpi(int *x, int *y)
 }
 
 /**
- * 
+ *
  */
 size_t oxcart_time_tick()
 {
@@ -366,7 +366,7 @@ size_t oxcart_time_tick()
 }
 
 /**
- * 
+ *
  */
 void oxcart_time_local(int *h, int *m, int *s, int *ms)
 {
@@ -386,7 +386,7 @@ void oxcart_time_local(int *h, int *m, int *s, int *ms)
 }
 
 /**
- * 
+ *
  */
 void oxcart_time_system(int *h, int *m, int *s, int *ms)
 {
@@ -406,7 +406,7 @@ void oxcart_time_system(int *h, int *m, int *s, int *ms)
 }
 
 /**
- * 
+ *
  */
 PROC oxcart_proc_address(const char *name)
 {
@@ -422,7 +422,7 @@ PROC oxcart_proc_address(const char *name)
 }
 
 /**
- * 
+ *
  */
 static void _main_initialize()
 {
@@ -444,7 +444,7 @@ static void _main_initialize()
 }
 
 /**
- * 
+ *
  */
 static void _monitor_initialize()
 {
@@ -486,7 +486,7 @@ static void _monitor_initialize()
 }
 
 /**
- * 
+ *
  */
 static void _monitor_terminate()
 {
@@ -494,7 +494,7 @@ static void _monitor_terminate()
 }
 
 /**
- * 
+ *
  */
 static int _monitor_add(const char *name, int primary)
 {
@@ -546,7 +546,7 @@ static void _rawinput_initialize()
 }
 
 /**
- * 
+ *
  */
 static void _rawinput_terminate()
 {
@@ -563,7 +563,7 @@ static void _rawinput_terminate()
 }
 
 /**
- * 
+ *
  */
 static void _time_initialize()
 {
@@ -573,7 +573,7 @@ static void _time_initialize()
 }
 
 /**
- * 
+ *
  */
 static void _time_terminate()
 {
@@ -581,7 +581,7 @@ static void _time_terminate()
 }
 
 /**
- * 
+ *
  */
 static void _xinput_poll()
 {
@@ -623,7 +623,7 @@ static void _xinput_poll()
 }
 
 /**
- * 
+ *
  */
 static int _xinput_translate(WORD button)
 {
@@ -667,7 +667,7 @@ static int _xinput_translate(WORD button)
 }
 
 /**
- * 
+ *
  */
 static void _window_initialize(const char *title, int style, int x, int y, int w, int h)
 {
@@ -796,7 +796,7 @@ static void _window_initialize(const char *title, int style, int x, int y, int w
 }
 
 /**
- * 
+ *
  */
 static void _window_terminate()
 {
@@ -807,7 +807,7 @@ static void _window_terminate()
 }
 
 /**
- * 
+ *
  */
 static int _window_poll()
 {
@@ -826,7 +826,7 @@ static int _window_poll()
 }
 
 /**
- * 
+ *
  */
 static int _window_wait()
 {
@@ -843,7 +843,7 @@ static int _window_wait()
 }
 
 /**
- * 
+ *
  */
 static void _window_dummy(const char *title, int *major, int *minor)
 {
@@ -908,7 +908,7 @@ static void _window_dummy(const char *title, int *major, int *minor)
 }
 
 /**
- * 
+ *
  */
 static LRESULT CALLBACK _window_proc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 {
@@ -1225,7 +1225,7 @@ static LRESULT CALLBACK _window_proc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM 
 }
 
 /**
- * 
+ *
  */
 static int _keyboard_translate(WPARAM key)
 {
