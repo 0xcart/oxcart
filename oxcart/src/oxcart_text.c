@@ -401,30 +401,27 @@ static oxcart_font_t *_text_font(oxcart_text_t *text, const oxcart_markup_t *mar
   int size;
   float line;
   const char *filename;
-  const char *filepath;
-  oxcart_vector_t *filepaths;
+  oxcart_vector_t *filenames;
   oxcart_font_t *font;
 
   OXCART_ASSERT(text);
   OXCART_ASSERT(markup);
   OXCART_ASSERT(markup->name);
 
-  if (!(filepaths = (oxcart_vector_t*)oxcart_hashmap_item(_m.config.fontmap, markup->name))) {
+  if (!(filenames = (oxcart_vector_t*)oxcart_hashmap_item(_m.config.fontmap, markup->name))) {
     OXCART_ASSERT(!"Invalid markup name");
   }
 
-  filepath = (const char*)oxcart_vector_item(filepaths, markup->style & 0x0F);
+  filename = (const char*)oxcart_vector_item(filenames, markup->style & 0x0F);
 
   for (i = 0; i < oxcart_vector_size(text->fonts); i++) {
     font = *(oxcart_font_t**)oxcart_vector_item(text->fonts, i);
-    filename = oxcart_font_properties(font, &size, &line);
 
-    if (!strncmp(filepath, filename, OXCART_FILEPATH_LENGTH) && (markup->size == size) && OXCART_ISEQUALf(markup->line, line, 0.001f)) {
       return(font);
     }
   }
 
-  font = oxcart_font_create(filepath, markup->size, markup->line, text->atlas);
+  font = oxcart_font_create(filename, markup->size, markup->line, text->atlas);
 
   /* upload modified atlas data containing new font */
   glBindTexture(GL_TEXTURE_2D, text->tex);

@@ -119,7 +119,6 @@ void oxcart_font_destroy(oxcart_font_t *font)
 /**
  * 
  */
-const char *oxcart_font_properties(oxcart_font_t *font, int *size, float *line)
 {
   OXCART_ASSERT(font);
   OXCART_ASSERT(size);
@@ -127,8 +126,6 @@ const char *oxcart_font_properties(oxcart_font_t *font, int *size, float *line)
 
   *size = font->size;
   *line = font->line;
-
-  return(font->filename);
 }
 
 /**
