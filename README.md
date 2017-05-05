@@ -15,7 +15,7 @@
 
   * Cairo Graphics 1.14.8 (https://cairographics.org/)
   * Freetype 2.7 (http://www.freetype.org/)
-  * Libpng 1.6.28 (http://www.libpng.org/pub/png/libpng.html)
+  * Libpng 1.6.29 (http://www.libpng.org/pub/png/libpng.html)
   * LuaJIT 2.0.5 (http://www.luajit.org/)
   * PhysicsFS 2.0.3 (http://icculus.org/physfs/)
   * Pixman 0.34 (http://www.pixman.org)
