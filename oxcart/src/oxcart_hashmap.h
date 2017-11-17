@@ -72,7 +72,7 @@ OXCART_INLINE size_t oxcart_hashint(const void *key)
 {
   OXCART_ASSERT(key);
 
-  return(*((int*)key));
+  return(*((intptr_t*)key));
 }
 
 /**
@@ -96,8 +96,8 @@ OXCART_INLINE int oxcart_compareint(const void *key1, const void *key2)
   OXCART_ASSERT(key1);
   OXCART_ASSERT(key2);
 
-  val1 = *((int*)key1);
-  val2 = *((int*)key2);
+  val1 = *((intptr_t*)key1);
+  val2 = *((intptr_t*)key2);
 
   if (val1 < val2) {
     return(-1);
