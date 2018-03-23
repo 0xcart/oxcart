@@ -14,6 +14,7 @@
 #### Internal Dependencies
 
   * Cairo Graphics 1.14.8 (https://cairographics.org/)
+  * CGLM 0.3.4 (https://github.com/recp/cglm)
   * Freetype 2.7 (http://www.freetype.org/)
   * Libpng 1.6.29 (http://www.libpng.org/pub/png/libpng.html)
   * LuaJIT 2.0.5 (http://www.luajit.org/)
