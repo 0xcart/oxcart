@@ -5,8 +5,8 @@
  * Full license can be found in the LICENSE file
  */
 
-#include <cglm.h>
-#include <call.h>
+#include "../include/cglm/cglm.h"
+#include "../include/cglm/call.h"
 
 CGLM_EXPORT
 void

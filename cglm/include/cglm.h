@@ -23,5 +23,8 @@
 #include "color.h"
 #include "util.h"
 #include "io.h"
+#include "project.h"
+#include "sphere.h"
+#include "ease.h"
 
 #endif /* cglm_h */
