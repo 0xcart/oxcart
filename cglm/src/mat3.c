@@ -5,8 +5,8 @@
  * Full license can be found in the LICENSE file
  */
 
-#include <cglm.h>
-#include <call.h>
+#include "../include/cglm/cglm.h"
+#include "../include/cglm/call.h"
 
 CGLM_EXPORT
 void
@@ -42,6 +42,12 @@ CGLM_EXPORT
 void
 glmc_mat3_mulv(mat3 m, vec3 v, vec3 dest) {
   glm_mat3_mulv(m, v, dest);
+}
+
+CGLM_EXPORT
+void
+glmc_mat3_quat(mat3 m, versor dest) {
+  glm_mat3_quat(m, dest);
 }
 
 CGLM_EXPORT

@@ -5,8 +5,8 @@
  * Full license can be found in the LICENSE file
  */
 
-#include <cglm.h>
-#include <call.h>
+#include "../include/cglm/cglm.h"
+#include "../include/cglm/call.h"
 
 CGLM_EXPORT
 void
@@ -18,6 +18,12 @@ CGLM_EXPORT
 void
 glmc_euler(vec3 angles, mat4 dest) {
   glm_euler(angles, dest);
+}
+
+CGLM_EXPORT
+void
+glmc_euler_xyz(vec3 angles,  mat4 dest) {
+  glm_euler_xyz(angles, dest);
 }
 
 CGLM_EXPORT

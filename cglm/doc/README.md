@@ -1,9 +1,11 @@
 # 🎥 OpenGL Mathematics (glm) for `C`
 [![Build Status](https://travis-ci.org/recp/cglm.svg?branch=master)](https://travis-ci.org/recp/cglm)
-[![Build status](https://ci.appveyor.com/api/projects/status/av7l3gc0yhfex8y4/branch/master?svg=true)](https://ci.appveyor.com/project/recp/cglm/branch/master)
+ [![Build status](https://ci.appveyor.com/api/projects/status/av7l3gc0yhfex8y4/branch/master?svg=true)](https://ci.appveyor.com/project/recp/cglm/branch/master)
 [![Documentation Status](https://readthedocs.org/projects/cglm/badge/?version=latest)](http://cglm.readthedocs.io/en/latest/?badge=latest)
 [![Coverage Status](https://coveralls.io/repos/github/recp/cglm/badge.svg?branch=master)](https://coveralls.io/github/recp/cglm?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6a62b37d5f214f178ebef269dc4a6bf1)](https://www.codacy.com/app/recp/cglm?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=recp/cglm&amp;utm_campaign=Badge_Grade)
+[![Backers on Open Collective](https://opencollective.com/cglm/backers/badge.svg)](#backers) 
+[![Sponsors on Open Collective](https://opencollective.com/cglm/sponsors/badge.svg)](#sponsors)
 
 The original glm library is for C++ only (templates, namespaces, classes...), this library targeted to C99 but currently you can use it for C89 safely by language extensions e.g `__restrict`
 
@@ -17,6 +19,11 @@ Complete documentation: http://cglm.readthedocs.io
 - _dup (duplicate) is changed to _copy. For instance `glm_vec_dup -> glm_vec_copy`
 - OpenGL related functions are dropped to make this lib platform/third-party independent
 - make sure you have latest version and feel free to report bugs, troubles
+- **[bugfix]** euler angles was implemented in reverse order (extrinsic) it was fixed, now they are intrinsic. Make sure that 
+you have the latest version
+- **[major change]** by starting v0.4.0, quaternions are stored as [x, y, z, w], it was [w, x, y, z] in v0.3.5 and earlier versions
+- **[api rename]** by starting v0.4.5, **glm_simd** functions are renamed to **glmm_**  
+- **[new option]** by starting v0.4.5, you can disable alignment requirement, check options in docs.  
 
 #### Note for C++ developers:
 If you don't aware about original GLM library yet, you may also want to look at:
@@ -73,6 +80,7 @@ Currently *cglm* uses default clip space configuration (-1, 1) for camera functi
 - inline or pre-compiled function call
 - frustum (extract view frustum planes, corners...)
 - bounding box  (AABB in Frustum (culling), crop, merge...)
+- project, unproject
 
 <hr />
 
@@ -113,6 +121,36 @@ glm_mul(T, R, modelMat);
 /* othonormal rot + tr matrix inverse (rigid-body) */
 glm_inv_tr(modelMat);
 ```
+
+## Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="graphs/contributors"><img src="https://opencollective.com/cglm/contributors.svg?width=890&button=false" /></a>
+
+
+## Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/cglm#backer)]
+
+<a href="https://opencollective.com/cglm#backers" target="_blank"><img src="https://opencollective.com/cglm/backers.svg?width=890"></a>
+
+
+## Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/cglm#sponsor)]
+
+<a href="https://opencollective.com/cglm/sponsor/0/website" target="_blank"><img src="https://opencollective.com/cglm/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/cglm/sponsor/1/website" target="_blank"><img src="https://opencollective.com/cglm/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/cglm/sponsor/2/website" target="_blank"><img src="https://opencollective.com/cglm/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/cglm/sponsor/3/website" target="_blank"><img src="https://opencollective.com/cglm/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/cglm/sponsor/4/website" target="_blank"><img src="https://opencollective.com/cglm/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/cglm/sponsor/5/website" target="_blank"><img src="https://opencollective.com/cglm/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/cglm/sponsor/6/website" target="_blank"><img src="https://opencollective.com/cglm/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/cglm/sponsor/7/website" target="_blank"><img src="https://opencollective.com/cglm/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/cglm/sponsor/8/website" target="_blank"><img src="https://opencollective.com/cglm/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/cglm/sponsor/9/website" target="_blank"><img src="https://opencollective.com/cglm/sponsor/9/avatar.svg"></a>
+
+
 
 ## License
 MIT. check the LICENSE file
@@ -193,6 +231,27 @@ glm_mat4_mul(m1, m2, m1);
 glm_mat4_mul(m1, m1, m1);
 ```
 the first two parameter are **[in]** and the last one is **[out]** parameter. After multiplied *m1* and *m2* the result is stored in *m1*. This is why we send *m1* twice. You may store result in different matrix, this just an example.
+
+### Example: Computing MVP matrix
+
+#### Option 1
+```C
+mat4 proj, view, model, mvp;
+
+/* init proj, view and model ... */
+
+glm_mat4_mul(proj, view, viewProj);
+glm_mat4_mul(viewProj, model, mvp);
+```
+
+#### Option 2
+```C
+mat4 proj, view, model, mvp;
+
+/* init proj, view and model ... */
+
+glm_mat4_mulN((mat4 *[]){&proj, &view, &model}, 3, mvp);
+```
 
 ## How to send matrix to OpenGL
 
