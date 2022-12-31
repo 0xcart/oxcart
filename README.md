@@ -24,7 +24,7 @@
 
 #### External Dependencies
 
-  * Microsoft Visual Studio 2017 Community
+  * Microsoft Visual Studio 2022 Community Edition
 
 #### License
 
