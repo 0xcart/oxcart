@@ -60,3 +60,6 @@ Thumbs.db
 *.db-shm
 *.db-wal
 *.opendb
+*.recipe
+*.vsidx
+*.lock
